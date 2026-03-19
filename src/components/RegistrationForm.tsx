@@ -82,6 +82,7 @@ export const RegistrationForm = () => {
         <div className="space-y-2">
           <label className="block font-bold">סטטוס</label>
           <select {...register('status', { required: true })} className="w-full p-2 border-2 border-black focus:bg-yellow-50 outline-none">
+            <option value="">-- בחר/י סטטוס --</option>
             <option value="בוגר/ת אייסף">בוגר/ת אייסף</option>
             <option value="סטודנט/ית אייסף">סטודנט/ית אייסף</option>
             <option value="אחר">אחר</option>
