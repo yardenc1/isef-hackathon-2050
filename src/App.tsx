@@ -176,12 +176,12 @@ export default function App() {
                 <div className="relative pl-8 border-l-2 border-yellow-400">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-400 rounded-full" />
                   <h4 className="text-xl font-bold text-yellow-400 mb-2">וובינר 1: Kickoff והיכרות</h4>
-                  <p className="text-zinc-400">ליצור מחוברות, לתת שפה משותפת, ולהוריד חשש אצל אנשים טובים שאין להם רעיון או צוות.</p>
+                  <p className="text-zinc-400">ליצור חיבור, לתת שפה משותפת, ולהוריד חשש אצל אנשים שאין להם רעיון או צוות.</p>
                 </div>
                 <div className="relative pl-8 border-l-2 border-yellow-400">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-400 rounded-full" />
                   <h4 className="text-xl font-bold text-yellow-400 mb-2">וובינר 2: Matchmaking וחידוד רעיונות</h4>
-                  <p className="text-zinc-400">להפוך את הוובינר לאירוע תכל’ס — לצאת ממנו עם צוותים סגורים וכיוון ברור.</p>
+                  <p className="text-zinc-400">להפוך את הוובינר לאירוע תכל’ס - לצאת ממנו עם צוותים סגורים וכיוון ברור.</p>
                 </div>
               </div>
             </div>
