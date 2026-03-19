@@ -13,6 +13,7 @@ interface RegistrationFormData {
   role: string;
   hasIdea: string;
   ideaDescription?: string;
+  joinExistingTeam: string;
   wantsToLead: string;
   teamPreference: string;
   partnerName?: string;
@@ -83,7 +84,6 @@ export const RegistrationForm = () => {
           <select {...register('status', { required: true })} className="w-full p-2 border-2 border-black focus:bg-yellow-50 outline-none">
             <option value="בוגר/ת אייסף">בוגר/ת אייסף</option>
             <option value="סטודנט/ית אייסף">סטודנט/ית אייסף</option>
-            <option value="סטודנט/ית לאייסף">סטודנט/ית לאייסף</option>
             <option value="אחר">אחר</option>
           </select>
         </div>
@@ -121,7 +121,7 @@ export const RegistrationForm = () => {
       <div className="space-y-4">
         <label className="block font-bold">האם יש לך רעיון לפרויקט?</label>
         <div className="flex gap-4">
-          {['כן', 'לא', 'אולי'].map(v => (
+          {['כן', 'לא'].map(v => (
             <label key={v} className="flex items-center gap-2 cursor-pointer">
               <input type="radio" value={v} {...register('hasIdea')} className="w-4 h-4 accent-black" />
               <span>{v}</span>
@@ -133,6 +133,18 @@ export const RegistrationForm = () => {
         )}
       </div>
 
+      <div className="space-y-4">
+        <label className="block font-bold">האם אתה מוכן/ה להצטרף לצוות קיים?</label>
+        <div className="flex gap-4">
+          {['כן', 'לא'].map(v => (
+            <label key={v} className="flex items-center gap-2 cursor-pointer">
+              <input type="radio" value={v} {...register('joinExistingTeam')} className="w-4 h-4 accent-black" />
+              <span>{v}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
       {error && (
         <div className="p-4 bg-red-50 border-2 border-red-500 text-red-800 font-bold">
           {error}
@@ -140,11 +152,11 @@ export const RegistrationForm = () => {
       )}
 
       <button
-      type="submit"
-      disabled={isSubmitting}
-      style={{ backgroundColor: '#000', color: '#fff', width: '100%', padding: '16px', fontSize: '1.25rem', fontWeight: 'bold', cursor: 'pointer', border: '4px solid #000' }}
-    >
-      {isSubmitting ? 'שולח...' : 'שלח הרשמה'}
+        type="submit"
+        disabled={isSubmitting}
+        style={{ backgroundColor: '#000', color: '#fff', width: '100%', padding: '16px', fontSize: '1.25rem', fontWeight: 'bold', cursor: 'pointer', border: '4px solid #000' }}
+      >
+        {isSubmitting ? 'שולח...' : 'שלח הרשמה'}
       </button>
     </form>
   );
