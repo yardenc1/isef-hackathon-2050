@@ -16,16 +16,16 @@ const ISEF_BLUE = '#1B2F6E';
 const ISEF_ORANGE = '#F5821F';
 
 const heroImages = [
-  '/images/event-1.jpeg',
-  '/images/event-2.jpeg',
-  '/images/event-3.jpeg',
-  '/images/event-4.jpeg',
+  `${import.meta.env.BASE_URL}images/event-1.jpeg`,
+  `${import.meta.env.BASE_URL}images/event-2.jpeg`,
+  `${import.meta.env.BASE_URL}images/event-3.jpeg`,
+  `${import.meta.env.BASE_URL}images/event-4.jpeg`,
 ];
 
 const aboutImages = [
-  '/images/event-2.jpeg',
-  '/images/event-3.jpeg',
-  '/images/event-4.jpeg',
+  `${import.meta.env.BASE_URL}images/event-2.jpeg`,
+  `${import.meta.env.BASE_URL}images/event-3.jpeg`,
+  `${import.meta.env.BASE_URL}images/event-4.jpeg`,
 ];
 
 const challenges = [
