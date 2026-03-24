@@ -189,6 +189,7 @@ export default function App() {
   const timeLeft = useCountdown(countdownTarget);
 
   const [timelineProgress, setTimelineProgress] = useState(0);
+  const [openChallengeId, setOpenChallengeId] = useState<number | null>(null);
   const timelineRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -226,13 +227,13 @@ export default function App() {
             <div className="text-xs text-blue-200">מומלץ למלא את הטופס מוקדם כדי להבטיח מקום</div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 md:gap-3">
+          <div className="grid grid-cols-2 gap-2 md:flex md:items-center md:justify-center md:gap-3">
             {[
-        { label : 'שניות', value : timeLeft.seconds },
-        { label : 'דקות', value : timeLeft.minutes },
-        { label : 'שעות', value : timeLeft.hours },
-        { label : 'ימים', value : timeLeft.days },
-      ].map((item) => (
+              { label : 'שניות', value : timeLeft.seconds },
+              { label : 'דקות', value : timeLeft.minutes },
+              { label : 'שעות', value : timeLeft.hours },
+              { label : 'ימים', value : timeLeft.days },
+            ].map((item) => (
               <div
                 key={item.label}
                 className="min-w-[70px] rounded-2xl border px-3 py-2 text-center"
@@ -253,7 +254,7 @@ export default function App() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/35 via-black/30 to-[#1B2F6E]/75" />
 
         <div className="absolute right-4 top-6 z-20 md:right-8">
-          <img src="/logos/isef-white.png" alt="ISEF Logo" className="h-14 object-contain md:h-16 opacity-90" />
+          <img src="/logos/isef-white.png" alt="ISEF Logo" className="h-14 object-contain opacity-90 md:h-16" />
         </div>
 
         <div className="relative z-20 container mx-auto flex min-h-[92vh] items-center px-4 py-14">
@@ -266,13 +267,13 @@ export default function App() {
                 ISEF 2050 HACKATHON
               </span>
 
-              <h1 className="mb-5 text-6xl font-black leading-[0.95] tracking-tight text-white md:text-8xl">
+              <h1 className="mb-5 text-4xl font-black leading-[0.95] tracking-tight text-white sm:text-5xl md:text-8xl">
                 הופכים רעיונות
                 <br />
                 לפתרונות אמיתיים
               </h1>
 
-              <p className="mx-auto mb-4 max-w-3xl text-2xl font-semibold leading-relaxed text-blue-50 md:text-3xl">
+              <p className="mx-auto mb-4 max-w-3xl text-lg font-semibold leading-relaxed text-blue-50 sm:text-xl md:text-3xl">
                 האקתון יומי לקהילת אייסף, מגיעים עם רעיון, יוצאים עם מוצר שעובד.
               </p>
 
@@ -289,7 +290,7 @@ export default function App() {
                   שליחת טופס
                 </button>
 
-                <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
+                <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm sm:w-auto">
                   <div className="text-sm font-bold text-blue-100">אירוע האקתון המרכזי</div>
                   <div className="text-2xl font-black">28.5 | 9:00-20:00</div>
                 </div>
@@ -311,20 +312,20 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div className="space-y-5">
-              <h2 className="text-5xl font-black tracking-tight md:text-6xl" style={{ color : ISEF_BLUE }}>
+              <h2 className="text-4xl font-black tracking-tight md:text-6xl" style={{ color : ISEF_BLUE }}>
                 זה לא עוד כנס של מצגות ודיבורים
               </h2>
 
-              <p className="text-xl leading-relaxed text-zinc-700 md:text-2xl">
+              <p className="text-lg leading-relaxed text-zinc-700 md:text-2xl">
                 האקתון ISEF 2050 הוא יום שלם של עשייה, ספרינטים ממוקדים, מנטורים צמודים, וצוותים מעורבים מקהילת אייסף.
                 מגיעים עם רעיון, יוצאים עם מוצר שעובד.
               </p>
 
-              <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
+              <p className="text-base leading-relaxed text-zinc-600 md:text-xl">
                 צריך רק רצון לנסות.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 pt-2">
+              <div className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-3">
                 {[
                   ['יום שלם', '9:00-20:00'],
                   ['4-6', 'בצוות'],
@@ -345,7 +346,7 @@ export default function App() {
             </div>
 
             <div
-              className="relative h-[380px] overflow-hidden rounded-[28px] border-4 md:h-[520px]"
+              className="relative h-[320px] overflow-hidden rounded-[28px] border-4 md:h-[520px]"
               style={{ borderColor : ISEF_BLUE, boxShadow : `12px 12px 0 ${ISEF_ORANGE}` }}
             >
               <ImageCarousel images={aboutImages} interval={4000} className="absolute inset-0 z-0" />
@@ -358,40 +359,37 @@ export default function App() {
       <section className="py-16 md:py-20" style={{ backgroundColor : ISEF_BLUE }}>
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-5xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
+            <h2 className="text-4xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
           </div>
 
           <div ref={timelineRef} className="relative mx-auto max-w-4xl">
-            <div className="absolute right-[17px] top-0 h-full w-1 rounded-full bg-white/15 md:right-1/2 md:translate-x-1/2" />
+            <div className="absolute right-4 top-0 h-full w-1 rounded-full bg-white/15 md:right-1/2 md:translate-x-1/2" />
             <div
-              className="absolute right-[17px] top-0 w-1 rounded-full transition-all duration-200 md:right-1/2 md:translate-x-1/2"
+              className="absolute right-4 top-0 w-1 rounded-full transition-all duration-200 md:right-1/2 md:translate-x-1/2"
               style={{
                 backgroundColor : ISEF_ORANGE,
                 height : `${timelineProgress * 100}%`,
               }}
             />
 
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {timeline.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="relative grid grid-cols-[1fr_40px] gap-4 md:grid-cols-2 md:gap-8"
-                >
-                  <div className={`md:${index % 2 === 0 ? 'pr-16 text-right' : 'order-2 pl-16 text-right'}`}>
-                    <div className="rounded-3xl bg-white/8 p-6 backdrop-blur-sm">
+                <div key={item.title} className="relative pr-12 md:grid md:grid-cols-2 md:gap-8 md:pr-0">
+                  <div className={`${index % 2 === 0 ? 'md:pr-16' : 'md:order-2 md:pl-16'} text-right`}>
+                    <div className="rounded-3xl bg-white/8 p-5 backdrop-blur-sm md:p-6">
                       <div className="mb-2 text-lg font-black md:text-xl" style={{ color : ISEF_ORANGE }}>
                         {item.date}
                       </div>
-                      <h3 className="mb-2 text-2xl font-black text-white md:text-3xl">{item.title}</h3>
-                      <p className="text-base leading-relaxed text-blue-100 md:text-lg">{item.desc}</p>
+                      <h3 className="mb-2 text-xl font-black text-white md:text-3xl">{item.title}</h3>
+                      <p className="text-sm leading-relaxed text-blue-100 md:text-lg">{item.desc}</p>
                     </div>
                   </div>
 
-                  <div className="relative flex items-start justify-center">
-                    <div className="mt-5 h-5 w-5 rounded-full border-4 border-white" style={{ backgroundColor : ISEF_ORANGE }} />
+                  <div className="absolute right-0 top-5 flex justify-center md:relative md:right-auto md:top-auto md:items-start">
+                    <div className="h-5 w-5 rounded-full border-4 border-white" style={{ backgroundColor : ISEF_ORANGE }} />
                   </div>
 
-                  <div className={`hidden md:block ${index % 2 === 0 ? 'order-2' : ''}`} />
+                  <div className={`hidden md:block ${index % 2 === 0 ? 'md:order-2' : ''}`} />
                 </div>
               ))}
             </div>
@@ -402,68 +400,89 @@ export default function App() {
       <section className="bg-zinc-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
-            <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
+            <h2 className="mb-4 text-4xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
               אתגרי הליבה
             </h2>
-            <p className="mx-auto max-w-3xl text-lg text-zinc-600 md:text-2xl">
+            <p className="mx-auto max-w-3xl text-base text-zinc-600 md:text-2xl">
               בחרו אתגר אחד: זהו נקודת כאב ברורה, והתמקדו בפתרון שניתן לבנייה ולהדגמה.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {challenges.map((item) => (
-              <motion.div
-                key={item.id}
-                whileHover={{ y : -6 }}
-                className="group relative min-h-[280px] overflow-hidden rounded-[28px] bg-white p-7"
-                style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}
-              >
-                <div
-                  className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl"
-                  style={{ backgroundColor : ISEF_BLUE, color : 'white' }}
+            {challenges.map((item) => {
+              const isOpen = openChallengeId === item.id;
+
+              return (
+                <motion.div
+                  key={item.id}
+                  whileHover={{ y : -6 }}
+                  className="group relative overflow-hidden rounded-[28px] bg-white p-6 md:min-h-[280px] md:p-7"
+                  style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}
                 >
-                  <item.icon className="h-7 w-7" />
-                </div>
-
-                <h3 className="mb-3 text-2xl font-black leading-tight" style={{ color : ISEF_BLUE }}>
-                  {item.title}
-                </h3>
-
-                <p className="mb-4 text-base leading-relaxed text-zinc-600">{item.shortDesc}</p>
-
-                <div className="text-sm font-black" style={{ color : ISEF_ORANGE }}>
-                  לפירוט
-                </div>
-
-                <div className="pointer-events-none absolute inset-0 flex items-end bg-[#1B2F6E]/96 p-7 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div>
-                    <h4 className="mb-3 text-2xl font-black text-white">{item.title}</h4>
-                    <p className="text-base leading-relaxed text-blue-50">{item.fullDesc}</p>
+                  <div
+                    className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl"
+                    style={{ backgroundColor : ISEF_BLUE, color : 'white' }}
+                  >
+                    <item.icon className="h-7 w-7" />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  <h3 className="mb-3 text-2xl font-black leading-tight" style={{ color : ISEF_BLUE }}>
+                    {item.title}
+                  </h3>
+
+                  <p className="mb-4 text-base leading-relaxed text-zinc-600">{item.shortDesc}</p>
+
+                  <button
+                    type="button"
+                    onClick={() => setOpenChallengeId(isOpen ? null : item.id)}
+                    className="inline-flex items-center rounded-full px-4 py-2 text-sm font-black md:hidden"
+                    style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
+                  >
+                    {isOpen ? 'סגירה' : 'לפירוט'}
+                  </button>
+
+                  <div className="hidden text-sm font-black md:block" style={{ color : ISEF_ORANGE }}>
+                    לפירוט
+                  </div>
+
+                  <div className="mt-4 md:hidden">
+                    {isOpen && (
+                      <div className="rounded-2xl p-4" style={{ backgroundColor : ISEF_BLUE }}>
+                        <p className="text-sm leading-relaxed text-blue-50">{item.fullDesc}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="pointer-events-none absolute inset-0 hidden items-end bg-[#1B2F6E]/96 p-7 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:flex">
+                    <div>
+                      <h4 className="mb-3 text-2xl font-black text-white">{item.title}</h4>
+                      <p className="text-base leading-relaxed text-blue-50">{item.fullDesc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
+          <h2 className="mb-3 text-center text-4xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
             לו״ז יום ההאקתון
           </h2>
-          <p className="mb-10 text-center text-lg text-zinc-500 md:text-xl">9:00-20:00 | יום שלם של עשייה</p>
+          <p className="mb-10 text-center text-base text-zinc-500 md:text-xl">9:00-20:00 | יום שלם של עשייה</p>
 
           <div className="mx-auto max-w-4xl overflow-hidden rounded-[28px] border border-zinc-200">
             {schedule.map((item, index) => (
               <div
                 key={`${item.time}-${index}`}
-                className="group flex items-center gap-5 border-b border-zinc-100 px-5 py-5 last:border-b-0 md:gap-8 md:px-8"
+                className="group flex items-start gap-4 border-b border-zinc-100 px-4 py-5 last:border-b-0 md:items-center md:gap-8 md:px-8"
               >
-                <div className="w-20 shrink-0 text-lg font-black text-zinc-400 transition-colors group-hover:text-orange-500 md:text-2xl">
+                <div className="w-20 shrink-0 text-base font-black text-zinc-400 transition-colors group-hover:text-orange-500 md:text-2xl">
                   {item.time}
                 </div>
-                <div className="flex-1 text-lg font-bold text-zinc-700 group-hover:text-zinc-950 md:text-2xl">
+                <div className="flex-1 text-base font-bold text-zinc-700 group-hover:text-zinc-950 md:text-2xl">
                   {item.event}
                 </div>
               </div>
@@ -475,10 +494,10 @@ export default function App() {
       <section id="register" className="py-16 md:py-20" style={{ backgroundColor : '#FFF8F0' }}>
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
-            <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>
+            <h2 className="mb-4 text-4xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>
               מוכנים לבנות את העתיד?
             </h2>
-            <p className="text-xl font-bold text-zinc-600 md:text-2xl">
+            <p className="text-lg font-bold text-zinc-600 md:text-2xl">
               הצטרפו ליום שלם של חדשנות, יצירה ומשמעות.
             </p>
           </div>
@@ -527,8 +546,8 @@ export default function App() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-6 border-t border-white/10 pt-8">
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-75">
-              <img src="/logos/isef-white.png" alt="ISEF" className="h-16 w-auto object-contain md:h-20" />
-              <img src="/logos/mada-boneh-hevra-white.png" alt="מדע בונה חברה" className="h-16 w-auto object-contain md:h-20" />
+              <img src="/logos/isef-white.png" alt="ISEF" className="h-12 w-auto object-contain md:h-20" />
+              <img src="/logos/mada-boneh-hevra-white.png" alt="מדע בונה חברה" className="h-12 w-auto object-contain md:h-20" />
             </div>
 
             <div className="text-center text-xs text-blue-300">
