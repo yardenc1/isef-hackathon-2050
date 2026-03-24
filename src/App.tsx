@@ -11,6 +11,8 @@ import {
   Users,
   HelpCircle,
   Trophy,
+  CalendarDays,
+  Wrench,
 } from 'lucide-react';
 import { RegistrationForm } from './components/RegistrationForm';
 
@@ -19,12 +21,6 @@ const ISEF_ORANGE = '#F5821F';
 
 const heroImages = [
   '/images/event-1.jpeg',
-  '/images/event-2.jpeg',
-  '/images/event-3.jpeg',
-  '/images/event-4.jpeg',
-];
-
-const aboutImages = [
   '/images/event-2.jpeg',
   '/images/event-3.jpeg',
   '/images/event-4.jpeg',
@@ -102,17 +98,17 @@ const dayFlow = [
   {
     title : 'פתיחה והיכרות',
     desc : 'התכנסות, מסגור האתגרים, היכרות עם הקהל והאווירה של היום.',
-    icon : Users,
+    icon : CalendarDays,
   },
   {
     title : 'עבודה בצוותים',
     desc : 'צוותים בונים פתרונות לאתגרים שהוגדרו, עם זמן לחשיבה, בנייה ודיוק הרעיון.',
-    icon : Zap,
+    icon : Users,
   },
   {
     title : 'ליווי של מנטורים',
     desc : 'מנטורים יעזרו לחדד את הערך, הכיוון, המוצר והפיץ׳.',
-    icon : ShieldCheck,
+    icon : Wrench,
   },
   {
     title : 'הצגה ופרס כספי',
@@ -274,7 +270,7 @@ export default function App() {
             <div className="text-sm text-blue-200 md:text-base">מומלץ למלא את הטופס מוקדם כדי להבטיח מקום</div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 md:flex md:items-center md:justify-center md:gap-3">
+          <div className="flex flex-nowrap justify-center gap-1 overflow-x-auto pb-1 md:gap-3">
             {[
               { label : 'שניות', value : timeLeft.seconds },
               { label : 'דקות', value : timeLeft.minutes },
@@ -283,13 +279,13 @@ export default function App() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="min-w-[78px] rounded-2xl border px-3 py-2 text-center"
+                className="min-w-[60px] rounded-xl border px-2 py-2 text-center md:min-w-[78px] md:rounded-2xl md:px-3"
                 style={{ backgroundColor : 'rgba(245,130,31,0.12)', borderColor : 'rgba(245,130,31,0.32)' }}
               >
-                <div className="text-2xl font-black leading-none md:text-3xl" style={{ color : ISEF_ORANGE }}>
+                <div className="text-xl font-black leading-none md:text-3xl" style={{ color : ISEF_ORANGE }}>
                   {String(item.value).padStart(2, '0')}
                 </div>
-                <div className="mt-1 text-xs font-bold text-blue-100 md:text-sm">{item.label}</div>
+                <div className="mt-1 text-[11px] font-bold text-blue-100 md:text-sm">{item.label}</div>
               </div>
             ))}
           </div>
@@ -320,23 +316,23 @@ export default function App() {
                 לפתרונות אמיתיים
               </h1>
 
-              <p className="mx-auto mb-4 max-w-3xl text-xl font-semibold leading-relaxed text-blue-50 sm:text-2xl md:text-4xl">
+              <p className="mx-auto mb-4 max-w-3xl text-2xl font-semibold leading-relaxed text-blue-50 sm:text-3xl md:text-4xl">
                 האקתון יומי לקהילת אייסף, מגיעים עם רעיון, יוצאים עם מוצר שעובד.
               </p>
 
-              <p className="mx-auto mb-8 max-w-2xl text-xl font-bold text-zinc-200 md:text-3xl">
+              <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
                 צריך רק רצון לנסות
               </p>
 
               <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
                 <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
-                  <div className="text-base font-bold text-blue-100 md:text-lg">אירוע האקתון המרכזי</div>
-                  <div className="text-2xl font-black md:text-3xl">28.5 | 9:00-20:00</div>
+                  <div className="text-lg font-bold text-blue-100 md:text-xl">אירוע האקתון המרכזי</div>
+                  <div className="text-3xl font-black">28.5 | 9:00-20:00</div>
                 </div>
 
                 <button
                   onClick={scrollToRegister}
-                  className="w-full rounded-2xl px-10 py-4 text-xl font-black transition-transform hover:scale-[1.02] md:text-2xl"
+                  className="w-full rounded-2xl px-10 py-4 text-2xl font-black transition-transform hover:scale-[1.02]"
                   style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
                 >
                   שליחת טופס
@@ -355,54 +351,6 @@ export default function App() {
         </div>
       </header>
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-            <div className="space-y-6">
-              <h2 className="text-5xl font-black tracking-tight md:text-6xl" style={{ color : ISEF_BLUE }}>
-                זה לא עוד כנס של מצגות ודיבורים
-              </h2>
-
-              <p className="text-xl leading-relaxed text-zinc-700 md:text-2xl">
-                האקתון ISEF 2050 הוא יום שלם של עשייה, ספרינטים ממוקדים, מנטורים צמודים, וצוותים מעורבים מקהילת אייסף.
-                מגיעים עם רעיון, יוצאים עם מוצר שעובד.
-              </p>
-
-              <p className="text-lg leading-relaxed text-zinc-500 md:text-xl">
-                צריך רק רצון לנסות.
-              </p>
-
-              <div className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-3">
-                {[
-                  ['יום שלם', '9:00-20:00'],
-                  ['4-6', 'בצוות'],
-                  ['מנטורים', 'ליווי צמוד'],
-                ].map(([value, label]) => (
-                  <div
-                    key={label}
-                    className="rounded-2xl border-r-4 bg-zinc-50 p-5 md:p-6"
-                    style={{ borderColor : ISEF_ORANGE }}
-                  >
-                    <div className="mb-1 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>
-                      {value}
-                    </div>
-                    <div className="text-sm font-black uppercase tracking-wider text-zinc-500 md:text-base">{label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="relative h-[340px] overflow-hidden rounded-[28px] border-4 md:h-[560px]"
-              style={{ borderColor : ISEF_BLUE, boxShadow : `12px 12px 0 ${ISEF_ORANGE}` }}
-            >
-              <ImageCarousel images={aboutImages} interval={4000} className="absolute inset-0 z-0" />
-              <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-zinc-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
@@ -418,10 +366,10 @@ export default function App() {
                 className="rounded-[28px] bg-white p-7"
                 style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}
               >
-                <h3 className="mb-3 text-2xl font-black md:text-3xl" style={{ color : ISEF_BLUE }}>
+                <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
                   {item.title}
                 </h3>
-                <p className="text-base leading-relaxed text-zinc-600 md:text-lg">{item.desc}</p>
+                <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -457,7 +405,7 @@ export default function App() {
                         {item.date}
                       </div>
                       <h3 className="mb-2 text-2xl font-black text-white md:text-3xl">{item.title}</h3>
-                      <p className="text-base leading-relaxed text-blue-100 md:text-lg">{item.desc}</p>
+                      <p className="text-lg leading-relaxed text-blue-100">{item.desc}</p>
                     </div>
                   </div>
 
@@ -479,7 +427,7 @@ export default function App() {
             <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
               אתגרי הליבה
             </h2>
-            <p className="mx-auto max-w-3xl text-lg text-zinc-600 md:text-2xl">
+            <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
               בחרו אתגר אחד: זהו נקודת כאב ברורה, והתמקדו בפתרון שניתן לבנייה ולהדגמה.
             </p>
           </div>
@@ -492,7 +440,7 @@ export default function App() {
                 <motion.div
                   key={item.id}
                   whileHover={{ y : -6 }}
-                  className="group relative overflow-hidden rounded-[28px] bg-white p-6 md:min-h-[320px] md:p-7"
+                  className="group relative z-10 overflow-hidden rounded-[28px] bg-white p-6 md:min-h-[320px] md:p-7"
                   style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}
                 >
                   <div
@@ -502,29 +450,29 @@ export default function App() {
                     <item.icon className="h-7 w-7" />
                   </div>
 
-                  <h3 className="mb-3 text-2xl font-black leading-tight md:text-3xl" style={{ color : ISEF_BLUE }}>
+                  <h3 className="mb-3 text-3xl font-black leading-tight" style={{ color : ISEF_BLUE }}>
                     {item.title}
                   </h3>
 
-                  <p className="mb-4 text-base leading-relaxed text-zinc-600 md:text-lg">{item.shortDesc}</p>
+                  <p className="mb-4 text-lg leading-relaxed text-zinc-600">{item.shortDesc}</p>
 
                   <button
                     type="button"
                     onClick={() => setOpenChallengeId(isOpen ? null : item.id)}
-                    className="inline-flex items-center rounded-full px-4 py-2 text-sm font-black md:hidden"
+                    className="inline-flex items-center rounded-full px-4 py-2 text-base font-black md:hidden"
                     style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
                   >
                     {isOpen ? 'סגירה' : 'לפירוט'}
                   </button>
 
-                  <div className="hidden text-sm font-black md:block" style={{ color : ISEF_ORANGE }}>
+                  <div className="hidden text-base font-black md:block" style={{ color : ISEF_ORANGE }}>
                     לפירוט
                   </div>
 
                   <div className="mt-4 md:hidden">
                     {isOpen && (
-                      <div className="rounded-2xl p-4" style={{ backgroundColor : ISEF_BLUE }}>
-                        <p className="text-sm leading-relaxed text-blue-50">{item.fullDesc}</p>
+                      <div className="rounded-2xl p-5" style={{ backgroundColor : ISEF_BLUE }}>
+                        <p className="text-base leading-relaxed text-blue-50 md:text-lg">{item.fullDesc}</p>
                       </div>
                     )}
                   </div>
@@ -547,7 +495,7 @@ export default function App() {
           <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
             מה צפוי ביום ההאקתון
           </h2>
-          <p className="mb-10 text-center text-lg text-zinc-500 md:text-xl">המבנה המדויק עוד מתעדכן, אבל זה הכיוון הכללי של היום</p>
+          <p className="mb-10 text-center text-xl text-zinc-500">המבנה המדויק עוד מתעדכן, אבל זה הכיוון הכללי של היום</p>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
             {dayFlow.map((item) => (
@@ -556,17 +504,20 @@ export default function App() {
                 className="rounded-[28px] bg-zinc-50 p-6 md:p-7"
                 style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}
               >
-                <div
-                  className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl"
-                  style={{ backgroundColor : ISEF_BLUE, color : 'white' }}
-                >
-                  <item.icon className="h-7 w-7" />
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className="flex h-10 w-10 items-center justify-center rounded-xl"
+                    style={{ backgroundColor : ISEF_BLUE, color : 'white' }}
+                  >
+                    <item.icon className="h-5 w-5" />
+                  </div>
+
+                  <h3 className="text-2xl font-black" style={{ color : ISEF_BLUE }}>
+                    {item.title}
+                  </h3>
                 </div>
 
-                <h3 className="mb-3 text-2xl font-black md:text-3xl" style={{ color : ISEF_BLUE }}>
-                  {item.title}
-                </h3>
-                <p className="text-base leading-relaxed text-zinc-600 md:text-lg">{item.desc}</p>
+                <p className="text-lg leading-relaxed text-zinc-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -585,29 +536,13 @@ export default function App() {
           </div>
 
           <div className="mx-auto mb-6 max-w-4xl rounded-[28px] border bg-white p-5 text-center md:p-6" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
-            <p className="text-base leading-relaxed text-zinc-600 md:text-lg">
+            <p className="text-lg leading-relaxed text-zinc-600">
               מגיעים עם צוות קיים? מומלץ לציין בטופס את שמות חברי הצוות ולפרט בקצרה על ההרכב הקיים.
             </p>
           </div>
 
           <div className="mx-auto max-w-5xl">
             <RegistrationForm />
-          </div>
-
-          <div className="mx-auto mt-8 max-w-3xl rounded-[28px] border bg-white p-6 text-center md:p-8" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
-            <div className="mb-2 text-2xl font-black md:text-3xl" style={{ color : ISEF_BLUE }}>
-              יש לך ניסיון משמעותי ביזמות?
-            </div>
-            <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
-              אפשר להצטרף לצוות המנטורים, לפרטים ניתן לפנות לענת.
-            </p>
-            <a
-              href="mailto:anat@isef.org.il"
-              className="mt-4 inline-block rounded-2xl px-6 py-3 text-lg font-black transition-opacity hover:opacity-90"
-              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
-            >
-              ענת רודוניה | anat@isef.org.il
-            </a>
           </div>
         </div>
       </section>
@@ -630,10 +565,10 @@ export default function App() {
                 className="rounded-[24px] bg-white p-5 md:p-6"
                 style={{ border : `2px solid ${ISEF_BLUE}` }}
               >
-                <summary className="cursor-pointer list-none text-right text-xl font-black md:text-2xl" style={{ color : ISEF_BLUE }}>
+                <summary className="cursor-pointer list-none text-right text-2xl font-black" style={{ color : ISEF_BLUE }}>
                   {item.question}
                 </summary>
-                <p className="mt-4 text-base leading-relaxed text-zinc-600 md:text-lg">
+                <p className="mt-4 text-lg leading-relaxed text-zinc-600">
                   {item.answer}
                 </p>
               </details>
@@ -650,14 +585,15 @@ export default function App() {
               <p className="text-sm text-blue-200 md:text-base">מצוינות עם משמעות. בונים את ישראל של המחר.</p>
             </div>
 
-            <div className="flex flex-col items-center gap-2 text-center text-sm">
-              <span className="text-blue-200">לפרטים נוספים</span>
+            <div className="flex max-w-sm flex-col items-center gap-2 text-center text-sm md:items-end md:text-right">
+              <span className="text-lg font-black text-blue-100">שאלות או הערות?</span>
+              <p className="text-sm text-blue-200 md:text-base">ניתן לפנות למנהלת ארגון הבוגרים בקרן אייסף, ענת רודוניה</p>
               <a
                 href="mailto:anat@isef.org.il"
                 className="text-lg font-black transition-opacity hover:opacity-85"
                 style={{ color : ISEF_ORANGE }}
               >
-                ענת רודוניה | anat@isef.org.il
+                anat@isef.org.il
               </a>
             </div>
           </div>
