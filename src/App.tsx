@@ -253,7 +253,7 @@ export default function App() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/35 via-black/30 to-[#1B2F6E]/75" />
 
         <div className="absolute right-4 top-6 z-20 md:right-8">
-          <img src="/logos/isef-color.png" alt="ISEF Logo" className="h-14 object-contain md:h-16" />
+          <img src="/logos/isef-white.png" alt="ISEF Logo" className="h-14 object-contain md:h-16 opacity-90" />
         </div>
 
         <div className="relative z-20 container mx-auto flex min-h-[92vh] items-center px-4 py-14">
