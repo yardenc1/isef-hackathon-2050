@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import {
+  Clock,
   HeartPulse,
   GraduationCap,
   ShieldCheck,
@@ -33,42 +34,42 @@ const challenges = [
     title : 'רפואה ובריאות דיגיטלית',
     icon : HeartPulse,
     shortDesc : 'שיפור קבלת החלטות רפואיות, רצף טיפולי וחוויית עבודה של צוותים רפואיים.',
-    fullDesc : 'פתרונות שמייעלים תהליכים במערכת הבריאות, מחזקים רצף טיפולי, מפחיתים עומס תפעולי, ומשפרים את חוויית המטופלים והצוותים. אפשר לחשוב על כלים תומכי החלטה, אוטומציה חכמה, ניווט מטופלים, או פלטפורמות שמחברות טוב יותר בין גורמים שונים במערכת.',
+    fullDesc : 'פתרונות שמייעלים תהליכים במערכת הבריאות, מחזקים רצף טיפולי, מפחיתים עומס תפעולי ומשפרים את חוויית המטופלים והצוותים. אפשר לחשוב על כלים תומכי החלטה, אוטומציה חכמה, ניווט מטופלים או פלטפורמות שמחברות טוב יותר בין גורמים שונים במערכת.',
   },
   {
     id : 2,
     title : 'בריאות, רווחה ואיכות חיים',
     icon : Zap,
     shortDesc : 'שיפור איכות החיים והרווחה של אנשים וקהילות בעזרת פתרונות חכמים.',
-    fullDesc : 'אתגר זה מתמקד בפתרונות שמשפרים את חיי היום יום של אנשים וקהילות, דרך חיזוק רווחה, מניעה, נגישות ושגרה בריאה יותר. אפשר לחשוב על מוצרים לשינה, תזונה, חוסן אישי, התמודדות עם בדידות, או כלים קהילתיים שמסייעים לאנשים לחיות טוב יותר.',
+    fullDesc : 'אתגר זה מתמקד בפתרונות שמשפרים את חיי היום יום של אנשים וקהילות, דרך חיזוק רווחה, מניעה, נגישות ושגרה בריאה יותר. אפשר לחשוב על מוצרים לשינה, תזונה, חוסן אישי, התמודדות עם בדידות או כלים קהילתיים שמסייעים לאנשים לחיות טוב יותר.',
   },
   {
     id : 3,
     title : 'חינוך וכלים לדור הבא',
     icon : GraduationCap,
     shortDesc : 'הענקת כלים, מיומנויות והזדמנויות שיאפשרו לדור הבא להוביל.',
-    fullDesc : 'פתרונות שמקדמים למידה, פיתוח מיומנויות, נגישות להזדמנויות והעצמה של צעירות וצעירים. אפשר לחשוב על כלים ללמידה מותאמת אישית, הכנה לעולם העבודה, חיזוק כישורים רכים, או חיבורים חכמים בין לומדים, מנטורים והזדמנויות.',
+    fullDesc : 'פתרונות שמקדמים למידה, פיתוח מיומנויות, נגישות להזדמנויות והעצמה של צעירות וצעירים. אפשר לחשוב על כלים ללמידה מותאמת אישית, הכנה לעולם העבודה, חיזוק כישורים רכים או חיבורים חכמים בין לומדים, מנטורים והזדמנויות.',
   },
   {
     id : 4,
     title : 'שירותים ציבוריים חכמים (GovTech)',
     icon : Globe,
     shortDesc : 'הפיכת שירותים ציבוריים לפשוטים יותר, נגישים יותר ושקופים יותר.',
-    fullDesc : 'מוצרים ושירותים שהופכים את המפגש עם המגזר הציבורי לברור, יעיל ונגיש יותר. אפשר לחשוב על פישוט טפסים, שיפור ניווט בין שירותים, הנגשה לאוכלוסיות מגוונות, שקיפות מידע, ותהליכים שמפחיתים בירוקרטיה ומחזקים אמון.',
+    fullDesc : 'מוצרים ושירותים שהופכים את המפגש עם המגזר הציבורי לברור, יעיל ונגיש יותר. אפשר לחשוב על פישוט טפסים, שיפור ניווט בין שירותים, הנגשה לאוכלוסיות מגוונות, שקיפות מידע ותהליכים שמפחיתים בירוקרטיה ומחזקים אמון.',
   },
   {
     id : 5,
     title : 'חוסן קהילתי ושייכות',
     icon : ShieldCheck,
     shortDesc : 'חיזוק חוסן חברתי, תחושת שייכות וקשרים בין אנשים.',
-    fullDesc : 'פתרונות שבונים קהילה, יוצרים חיבורים משמעותיים ומחזקים תחושת שייכות, אמון וחוסן חברתי. אפשר לחשוב על פלטפורמות קהילתיות, חיבורים בין דורות, מענה לבדידות, התארגנויות מקומיות, או כלים שמעודדים שיתופיות ועזרה הדדית.',
+    fullDesc : 'פתרונות שבונים קהילה, יוצרים חיבורים משמעותיים ומחזקים תחושת שייכות, אמון וחוסן חברתי. אפשר לחשוב על פלטפורמות קהילתיות, חיבורים בין דורות, מענה לבדידות, התארגנויות מקומיות או כלים שמעודדים שיתופיות ועזרה הדדית.',
   },
   {
     id : 6,
     title : 'קיימות ותשתיות חיים',
     icon : Leaf,
     shortDesc : 'התמודדות עם אתגרי קיימות ותשתיות כחלק מהחיים היומיומיים.',
-    fullDesc : 'פתרונות שעוסקים בקיימות מעשית ובתשתיות חיים חכמות, מתוך מבט יומיומי ואנושי. אפשר לחשוב על צריכת אנרגיה, מזון, תחבורה, מחזור, שימוש יעיל במשאבים, או שירותים עירוניים שמאפשרים חיים טובים, חכמים וברי קיימא יותר.',
+    fullDesc : 'פתרונות שעוסקים בקיימות מעשית ובתשתיות חיים חכמות מתוך מבט יומיומי ואנושי. אפשר לחשוב על צריכת אנרגיה, מזון, תחבורה, מחזור, שימוש יעיל במשאבים או שירותים עירוניים שמאפשרים חיים טובים, חכמים וברי קיימא יותר.',
   },
 ];
 
@@ -123,6 +124,7 @@ function useCountdown(targetDate : Date) {
         hours : 0,
         minutes : 0,
         seconds : 0,
+        completed : true,
       };
     }
 
@@ -131,6 +133,7 @@ function useCountdown(targetDate : Date) {
       hours : Math.floor((distance / (1000 * 60 * 60)) % 24),
       minutes : Math.floor((distance / (1000 * 60)) % 60),
       seconds : Math.floor((distance / 1000) % 60),
+      completed : false,
     };
   };
 
@@ -187,6 +190,7 @@ export default function App() {
 
       const rect = timelineRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
+
       const total = rect.height + viewportHeight;
       const passed = viewportHeight - rect.top;
       const progress = Math.max(0, Math.min(1, passed / total));
@@ -205,7 +209,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-white text-zinc-900">
+    <div className="min-h-screen bg-white font-sans text-zinc-900">
       <div
         className="sticky top-0 z-50 border-b backdrop-blur-md"
         style={{ backgroundColor : 'rgba(27, 47, 110, 0.94)', borderColor : 'rgba(255,255,255,0.08)' }}
@@ -267,7 +271,7 @@ export default function App() {
               </p>
 
               <p className="mx-auto mb-8 max-w-2xl text-lg font-bold md:text-2xl" style={{ color : ISEF_ORANGE }}>
-                חוששים מיזמות? לא יודעים מאיפה להתחיל? בדיוק בשבילכם 👇
+                חולמים על יזמות?
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -307,11 +311,11 @@ export default function App() {
 
               <p className="text-xl leading-relaxed text-zinc-700 md:text-2xl">
                 האקתון ISEF 2050 הוא יום שלם של עשייה, ספרינטים ממוקדים, מנטורים צמודים, וצוותים מעורבים מקהילת אייסף.
-                מגיעים עם סקרנות, יוצאים עם אבטיפוס מוכן להצגה.
+                מגיעים עם רעיון, יוצאים עם מוצר שעובד.
               </p>
 
               <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
-                לא צריך ניסיון בסטארטאפים. לא צריך רעיון מוכן. צריך רק רצון לנסות.
+                צריך רק רצון לנסות.
               </p>
 
               <div className="grid grid-cols-3 gap-4 pt-2">
@@ -342,12 +346,9 @@ export default function App() {
         </div>
       </section>
 
+
       <section className="py-16 md:py-20" style={{ backgroundColor : ISEF_BLUE }}>
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-5xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
-          </div>
-
           <div ref={timelineRef} className="relative mx-auto max-w-4xl">
             <div className="absolute right-[17px] top-0 h-full w-1 rounded-full bg-white/15 md:right-1/2 md:translate-x-1/2" />
             <div
