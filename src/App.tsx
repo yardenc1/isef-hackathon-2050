@@ -1,9 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import {
-  Calendar,
-  Clock,
-  Users,
   HeartPulse,
   GraduationCap,
   ShieldCheck,
@@ -50,7 +47,7 @@ const challenges = [
     title : 'חינוך וכלים לדור הבא',
     icon : GraduationCap,
     shortDesc : 'הענקת כלים, מיומנויות והזדמנויות שיאפשרו לדור הבא להוביל.',
-    fullDesc : 'פתרונות שמקדמים למידה, פיתוח מיומנויות, נגישות להזדמנויות והעצמה של צעירות וצעירים. אפשר לחשוב על כלים למידה מותאמת אישית, הכנה לעולם העבודה, חיזוק כישורים רכים, או חיבורים חכמים בין לומדים, מנטורים והזדמנויות.',
+    fullDesc : 'פתרונות שמקדמים למידה, פיתוח מיומנויות, נגישות להזדמנויות והעצמה של צעירות וצעירים. אפשר לחשוב על כלים ללמידה מותאמת אישית, הכנה לעולם העבודה, חיזוק כישורים רכים, או חיבורים חכמים בין לומדים, מנטורים והזדמנויות.',
   },
   {
     id : 4,
@@ -126,7 +123,6 @@ function useCountdown(targetDate : Date) {
         hours : 0,
         minutes : 0,
         seconds : 0,
-        completed : true,
       };
     }
 
@@ -135,7 +131,6 @@ function useCountdown(targetDate : Date) {
       hours : Math.floor((distance / (1000 * 60 * 60)) % 24),
       minutes : Math.floor((distance / (1000 * 60)) % 60),
       seconds : Math.floor((distance / 1000) % 60),
-      completed : false,
     };
   };
 
@@ -192,7 +187,6 @@ export default function App() {
 
       const rect = timelineRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-
       const total = rect.height + viewportHeight;
       const passed = viewportHeight - rect.top;
       const progress = Math.max(0, Math.min(1, passed / total));
@@ -368,7 +362,7 @@ export default function App() {
               {timeline.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`relative grid grid-cols-[1fr_40px] gap-4 md:grid-cols-2 md:gap-8 ${index % 2 === 0 ? '' : ''}`}
+                  className="relative grid grid-cols-[1fr_40px] gap-4 md:grid-cols-2 md:gap-8"
                 >
                   <div className={`md:${index % 2 === 0 ? 'pr-16 text-right' : 'order-2 pl-16 text-right'}`}>
                     <div className="rounded-3xl bg-white/8 p-6 backdrop-blur-sm">
