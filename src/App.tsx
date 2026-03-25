@@ -214,8 +214,8 @@ export default function App() {
 
         <div className="absolute inset-x-0 top-6 z-20 px-4 md:px-8">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-            <img src="/logos/mada-boneh-hevra-white.png" alt="מדע בונה חברה" className="h-10 w-auto object-contain md:h-14" />
-            <img src="/logos/isef-white.png" alt="ISEF Logo" className="h-10 w-auto object-contain opacity-90 md:h-14" />
+            <img src="/logos/isef-white.png" alt="ISEF Logo" className="h-10 w-auto object-contain md:h-14" />
+            <img src="/logos/mada-boneh-hevra-white.png" alt="מדע בונה חברה" className="h-10 w-auto object-contain opacity-90 md:h-14" />
           </div>
         </div>
 
