@@ -150,7 +150,7 @@ function ImageCarousel({ images, interval = 4500, className = '' } : { images : 
 }
 
 export default function App() {
-  const countdownTarget = useMemo(() => new Date('2026-05-01T00:00:00'), []);
+  const countdownTarget = useMemo(() => new Date('2026-05-01T23:59:59'), []);
   const timeLeft = useCountdown(countdownTarget);
   const [timelineProgress, setTimelineProgress] = useState(0);
   const [openChallengeId, setOpenChallengeId] = useState<number | null>(null);
@@ -239,22 +239,23 @@ export default function App() {
                 צריך רק רצון לנסות
               </p>
 
-              <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
-                <div className="text-lg font-bold text-blue-100 md:text-xl">אירוע ההאקתון המרכזי</div>
-                <div className="text-3xl font-black">28.5 | 9:00-20:00</div>
-              
-                <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
-                  <MapPin className="h-5 w-5" />
-                  <span>מרכז הארץ - מיקום מדויק יימסר בהמשך</span>
+              <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
+                <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
+                  <div className="text-lg font-bold text-blue-100 md:text-xl">אירוע ההאקתון המרכזי</div>
+                  <div className="text-3xl font-black">28.5 | 9:00-20:00</div>
+
+                  <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
+                    <MapPin className="h-5 w-5" />
+                    <span>מרכז הארץ - מיקום מדויק יימסר בהמשך</span>
+                  </div>
+
+                  <div className="mt-4 border-t border-white/15 pt-4 text-center">
+                    <div className="text-base font-bold text-blue-100 md:text-lg">דמי השתתפות</div>
+                    <div className="mt-1 text-lg font-black md:text-xl">בוגרים - 100 ש״ח | סטודנטים - 50% הנחה</div>
+                    <div className="mt-3 text-base font-bold text-blue-100 md:text-lg">פרס ראשון</div>
+                    <div className="mt-1 text-xl font-black md:text-2xl">עד 20,000 ש״ח</div>
+                  </div>
                 </div>
-              
-                <div className="mt-4 border-t border-white/15 pt-4 text-center">
-                  <div className="text-base font-bold text-blue-100 md:text-lg">דמי השתתפות</div>
-                  <div className="mt-1 text-lg font-black md:text-xl">בוגרים - 100 ש״ח | סטודנטים - 50% הנחה</div>
-                  <div className="mt-3 text-base font-bold text-blue-100 md:text-lg">פרס ראשון</div>
-                  <div className="mt-1 text-xl font-black md:text-2xl">עד 20,000 ש״ח</div>
-                </div>
-              </div>
 
                 <button
                   onClick={scrollToRegister}
