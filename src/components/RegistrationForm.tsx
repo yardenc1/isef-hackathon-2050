@@ -3,7 +3,7 @@ import React from 'react';
 const ISEF_BLUE = '#1B2F6E';
 const ISEF_ORANGE = '#F5821F';
 
-const GRADUATES_PAYMENT_LINK = 'https://live.payme.io/sale/template/SALE1774-602562YM-A6WTYNLK-0Z6OPZLE';
+const GRADUATES_PAYMENT_LINK = 'https://live.payme.io/sale/template/SALE1774-602901WM-MDBG3GV8-65VKIUXZ';
 const STUDENTS_PAYMENT_LINK = 'https://live.payme.io/sale/template/SALE1774-6028450H-7MVRQMBF-0NIP3KXR';
 
 export function RegistrationForm() {
