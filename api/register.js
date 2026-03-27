@@ -12,8 +12,12 @@ export default async function handler(req, res) {
     const data = req.body;
 
     const client_email = process.env.GOOGLE_CLIENT_EMAIL;
-    const private_key = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n');
+    const private_key = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
     const sheetId = process.env.GOOGLE_SHEET_ID;
+
+    if (!client_email || !private_key || !sheetId) {
+      return res.status(500).json({ error : 'Missing Google environment variables' });
+    }
 
     // 🔐 JWT יציב
     const token = jwt.sign(
