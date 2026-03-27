@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken';
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -9,63 +11,53 @@ export default async function handler(req, res) {
   try {
     const data = req.body;
 
-    const serviceAccount = {
-      client_email : process.env.GOOGLE_CLIENT_EMAIL,
-      private_key : process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-    };
-
-    const token = await getAccessToken(serviceAccount);
+    const client_email = process.env.GOOGLE_CLIENT_EMAIL;
+    const private_key = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n');
     const sheetId = process.env.GOOGLE_SHEET_ID;
 
-    const graduatesPaymentLink = 'https://live.payme.io/sale/template/SALE1774-602562YM-A6WTYNLK-0Z6OPZLE';
-    const studentsPaymentLink = 'https://live.payme.io/sale/template/SALE1774-6028450H-7MVRQMBF-0NIP3KXR';
-
-    let paymentAmount = 100;
-    let paymentLink = graduatesPaymentLink;
-
-    if (data.status === 'סטודנט/ית אייסף') {
-      paymentAmount = 50;
-      paymentLink = studentsPaymentLink;
-    }
-
-    const headers = [
-      'תאריך הרשמה',
-      'שם מלא',
-      'טלפון',
-      'אימייל',
-      'סטטוס',
-      'מוסד / מקום עבודה',
-      'עיר',
-      'אתגרים',
-      'תפקיד / חוזקה',
-      'יש רעיון?',
-      'תיאור הרעיון',
-      'רוצה להוביל?',
-      'העדפת צוות',
-      'שם שותף',
-      'וובינר 1',
-      'וובינר 2',
-      'זמן מועדף',
-      'תשלום',
-      'סכום לתשלום',
-      'לינק תשלום',
-      'סטטוס תשלום',
-    ];
-
-    const checkRes = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/A1:U1`,
-      { headers : { Authorization : `Bearer ${token}` } }
+    // 🔐 JWT יציב
+    const token = jwt.sign(
+      {
+        iss : client_email,
+        scope : 'https://www.googleapis.com/auth/spreadsheets',
+        aud : 'https://oauth2.googleapis.com/token',
+        exp : Math.floor(Date.now() / 1000) + 3600,
+        iat : Math.floor(Date.now() / 1000),
+      },
+      private_key,
+      { algorithm : 'RS256' }
     );
 
-    const checkData = await checkRes.json();
-    const isEmpty = !checkData.values || checkData.values.length === 0;
+    const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+      method : 'POST',
+      headers : { 'Content-Type' : 'application/x-www-form-urlencoded' },
+      body : new URLSearchParams({
+        grant_type : 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+        assertion : token,
+      }),
+    });
 
-    const rows = [];
-    if (isEmpty) rows.push(headers);
+    const tokenData = await tokenRes.json();
+
+    if (!tokenData.access_token) {
+      console.error('❌ Token error:', tokenData);
+      return res.status(500).json({ error : 'Token failed' });
+    }
+
+    const accessToken = tokenData.access_token;
+
+    // 💰 לוגיקת תשלום
+    const graduatesLink = 'https://live.payme.io/sale/template/SALE1774-602901WM-MDBG3GV8-65VKIUXZ';
+    const studentsLink = 'https://live.payme.io/sale/template/SALE1774-6028450H-7MVRQMBF-0NIP3KXR';
+
+    const isStudent = data.status === 'סטודנט/ית אייסף';
+
+    const paymentAmount = isStudent ? 50 : 100;
+    const paymentLink = isStudent ? studentsLink : graduatesLink;
 
     const now = new Date().toLocaleString('he-IL', { timeZone : 'Asia/Jerusalem' });
 
-    rows.push([
+    const row = [
       now,
       data.fullName || '',
       data.phone || '',
@@ -73,7 +65,7 @@ export default async function handler(req, res) {
       data.status || '',
       data.institution || '',
       data.city || '',
-      Array.isArray(data.challenges) ? data.challenges.join(', ') : (data.challenges || ''),
+      data.challenges || '',
       data.role || '',
       data.hasIdea || '',
       data.ideaDescription || '',
@@ -87,105 +79,35 @@ export default async function handler(req, res) {
       paymentAmount,
       paymentLink,
       'ממתין לתשלום',
-    ]);
+    ];
 
     const appendRes = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/A1:U1:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
+      `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/A1:U1:append?valueInputOption=USER_ENTERED`,
       {
         method : 'POST',
         headers : {
-          Authorization : `Bearer ${token}`,
+          Authorization : `Bearer ${accessToken}`,
           'Content-Type' : 'application/json',
         },
-        body : JSON.stringify({ values : rows }),
+        body : JSON.stringify({ values : [row] }),
       }
     );
 
+    const result = await appendRes.json();
+
     if (!appendRes.ok) {
-      const err = await appendRes.json();
-      console.error('Sheets API error:', err);
-      return res.status(500).json({ error : 'Failed to write to sheet' });
+      console.error('❌ Sheets error:', result);
+      return res.status(500).json({ error : 'Sheets failed' });
     }
 
     return res.status(200).json({
       success : true,
-      paymentRequired : true,
       paymentAmount,
       paymentLink,
     });
+
   } catch (err) {
-    console.error('Handler error:', err);
+    console.error('🔥 Handler crash:', err);
     return res.status(500).json({ error : err.message });
   }
-}
-
-async function getAccessToken({ client_email, private_key }) {
-  const now = Math.floor(Date.now() / 1000);
-
-  const payload = {
-    iss : client_email,
-    scope : 'https://www.googleapis.com/auth/spreadsheets',
-    aud : 'https://oauth2.googleapis.com/token',
-    exp : now + 3600,
-    iat : now,
-  };
-
-  const jwt = await signJwt(payload, private_key);
-
-  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
-    method : 'POST',
-    headers : { 'Content-Type' : 'application/x-www-form-urlencoded' },
-    body : new URLSearchParams({
-      grant_type : 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      assertion : jwt,
-    }),
-  });
-
-  const tokenData = await tokenRes.json();
-
-  if (!tokenData.access_token) {
-    throw new Error('Failed to get access token: ' + JSON.stringify(tokenData));
-  }
-
-  return tokenData.access_token;
-}
-
-async function signJwt(payload, privateKeyPem) {
-  const header = { alg : 'RS256', typ : 'JWT' };
-
-  const encode = (obj) =>
-    btoa(JSON.stringify(obj))
-      .replace(/=/g, '')
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_');
-
-  const signingInput = `${encode(header)}.${encode(payload)}`;
-
-  const keyData = privateKeyPem
-    .replace(/-----BEGIN PRIVATE KEY-----/, '')
-    .replace(/-----END PRIVATE KEY-----/, '')
-    .replace(/\s/g, '');
-
-  const binaryKey = Uint8Array.from(atob(keyData), (c) => c.charCodeAt(0));
-
-  const cryptoKey = await crypto.subtle.importKey(
-    'pkcs8',
-    binaryKey.buffer,
-    { name : 'RSASSA-PKCS1-v1_5', hash : 'SHA-256' },
-    false,
-    ['sign']
-  );
-
-  const signature = await crypto.subtle.sign(
-    'RSASSA-PKCS1-v1_5',
-    cryptoKey,
-    new TextEncoder().encode(signingInput)
-  );
-
-  const sigBase64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
-    .replace(/=/g, '')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_');
-
-  return `${signingInput}.${sigBase64}`;
 }
