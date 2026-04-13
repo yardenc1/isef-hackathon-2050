@@ -232,7 +232,7 @@ export default function App() {
               </h1>
 
               <p className="mx-auto mb-4 max-w-3xl text-2xl font-semibold leading-relaxed text-blue-50 sm:text-3xl md:text-4xl">
-                האקתון יומי לקהילת אייסף, מגיעים עם רעיון, יוצאים עם מוצר שעובד.
+                האקתון יומי לקהילת אייסף - מגיעים עם רצון לשנות ויוצאים עם רעיון מגובש.
               </p>
 
               <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
