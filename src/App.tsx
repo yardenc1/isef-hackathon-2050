@@ -14,6 +14,10 @@ import {
   CalendarDays,
   Wrench,
   MapPin,
+  UserPlus,
+  Presentation,
+  Mic,
+  Sparkles,
 } from 'lucide-react';
 import { RegistrationForm } from './components/RegistrationForm';
 
@@ -74,29 +78,30 @@ const challenges = [
 
 const timeline = [
   { date : '29.3', title : 'פתיחת הרשמה', desc : 'פתיחת טופס ההרשמה לקהילת אייסף.' },
-  { date : '1.5', title : 'סגירת הרשמה', desc : 'המועד האחרון לשליחת הטופס בחצות.' },
+  { date : '10.5', title : 'סגירת הרשמה', desc : 'המועד האחרון לשליחת הטופס בחצות.' },
   { date : '28.5', title : 'אירוע האקתון מרכזי', desc : 'יום האקתון מלא של בנייה, מנטורים, דמו והצגה.' },
 ];
 
 const dayFlow = [
-  { title : 'פתיחה והיכרות', desc : 'התכנסות, מסגור האתגרים, היכרות עם הקהל והאווירה של היום.', icon : CalendarDays },
+  { title : 'פתיחה והיכרות', desc : 'התכנסות, פתיחה חגיגית, היכרות עם הקהל והאווירה של היום.', icon : CalendarDays },
+  { title : 'חלוקה לצוותים', desc : 'הצטוותו עם משתתפים נוספים או הקימו צוות חדש סביב רעיון משותף.', icon : UserPlus },
   { title : 'עבודה בצוותים', desc : 'צוותים בונים פתרונות לאתגרים שהוגדרו, עם זמן לחשיבה, בנייה ודיוק הרעיון.', icon : Users },
+  { title : 'סדנאות פרקטיות', desc : 'סדנאות יישומיות שיעזרו לכם לדייק את הרעיון, לבנות מיזם ולהציג אותו בצורה משכנעת.', icon : Presentation },
   { title : 'ליווי של מנטורים', desc : 'מנטורים יעזרו לחדד את הערך, הכיוון, המוצר והפיץ׳.', icon : Wrench },
-  { title : 'הצגה ופרסים', desc : 'בסוף היום הצוותים יציגו את הפתרון שלהם, והצוות הזוכה יוכל לזכות בפרס ראשון של עד 20,000 ש״ח.', icon : Trophy },
+  { title : 'הצגה ופרסים', desc : 'בסוף היום הצוותים יציגו את הפתרון שלהם, והצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.', icon : Trophy },
 ];
 
 const infoCards = [
   { title : 'מה זה האקתון ISEF 2050?', desc : 'האקתון יומי לקהילת אייסף שמחבר בין אנשים, רעיונות ואתגרים משמעותיים. המטרה היא לבנות פתרונות אמיתיים סביב האתגרים שנציג, בליווי מנטורים ובאווירה של עשייה.' },
-  { title : 'מי יכולות ויכולים להשתתף?', desc : 'אפשר להגיע כיחידים או כצוות מגובש. בתחילת ההאקתון תתקיים אפשרות להצטרף או להקים צוות. גם צוות קיים יכול להשתתף, כל עוד לפחות אחת או אחד מחברי הצוות שייכים לקהילת אייסף.' },
-  { title : 'כמה זה עולה?', desc : 'דמי ההשתתפות הם 100 ש״ח לבוגרים. לסטודנטים יש 50% הנחה.' },
+  { title : 'מי יכולות ויכולים להשתתף?', desc : 'אפשר להגיע כיחידים או כצוות מגובש. גם צוות קיים יכול להשתתף, כל עוד לפחות אחת או אחד מחברי הצוות שייכים לקהילת אייסף.' },
+  { title : 'מה מחכה לכם ביום עצמו?', desc : 'יום שלם של השראה, עבודה בצוותים, סדנאות פרקטיות, ליווי של מנטורים, הרצאת אורח והצגת הפתרונות על הבמה.' },
 ];
 
 const faqs = [
   { question : 'אפשר להגיע עם צוות קיים?', answer : 'כן. אפשר להגיע עם צוות מגובש, ובטופס כדאי לציין את שמות חברי הצוות ואת הפרטים הרלוונטיים עליהם.' },
-  { question : 'מי יכול להשתתף?', answer : 'אפשר להשתתף גם כיחידים וגם כצוות. בתחילת ההאקתון תתקיים אפשרות להצטרף או להקים צוות. בצוות קיים מספיק שלפחות אחת או אחד מחברי הצוות יהיו מקהילת אייסף.' },
+  { question : 'מי יכול להשתתף?', answer : 'אפשר להשתתף גם כיחידים וגם כצוות. בצוות קיים מספיק שלפחות אחת או אחד מחברי הצוות יהיו מקהילת אייסף.' },
   { question : 'צריך רעיון מוכן מראש?', answer : 'לא. אפשר להגיע גם בלי רעיון מלא. במהלך האירוע יהיו אתגרים מוגדרים, מנטורים וליווי שיסייעו לחדד כיוון ולבנות פתרון.' },
-  { question : 'כמה עולה להשתתף?', answer : 'דמי ההשתתפות הם 100 ש״ח לבוגרים. לסטודנטים יש 50% הנחה.' },
-  { question : 'יש פרס?', answer : 'כן. הצוות הזוכה יוכל לזכות בפרס ראשון של עד 20,000 ש״ח.' },
+  { question : 'יש פרס?', answer : 'כן. הצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.' },
 ];
 
 function useCountdown(targetDate : Date) {
@@ -150,7 +155,7 @@ function ImageCarousel({ images, interval = 4500, className = '' } : { images : 
 }
 
 export default function App() {
-  const countdownTarget = useMemo(() => new Date('2026-05-01T23:59:59'), []);
+  const countdownTarget = useMemo(() => new Date('2026-05-10T23:59:59'), []);
   const timeLeft = useCountdown(countdownTarget);
   const [timelineProgress, setTimelineProgress] = useState(0);
   const [openChallengeId, setOpenChallengeId] = useState<number | null>(null);
@@ -178,11 +183,18 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-zinc-900">
-      <div className="sticky top-0 z-50 border-b backdrop-blur-md" style={{ backgroundColor : 'rgba(27, 47, 110, 0.94)', borderColor : 'rgba(255,255,255,0.08)' }}>
+      <div className="sticky top-0 z-50 border-b backdrop-blur-md" style={{ backgroundColor : 'rgba(27, 47, 110, 0.96)', borderColor : 'rgba(255,255,255,0.08)' }}>
         <div className="container mx-auto flex flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between">
           <div className="text-center md:text-right">
-            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה ל-ISEF 2050 נסגרת ב-1.5 בחצות</div>
-            <div className="text-sm text-blue-200 md:text-base">מספר המקומות מוגבל, מומלץ להירשם מוקדם</div>
+            <div
+              className="mb-2 inline-flex items-center rounded-full px-4 py-1 text-base font-black md:text-lg"
+              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
+            >
+              תמיד חלמת להיות יזם?
+            </div>
+
+            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה ל-ISEF 2050 נסגרת ב-10.5 בחצות</div>
+            <div className="text-sm font-bold md:text-base" style={{ color : ISEF_ORANGE }}>פרס ראשון: עד 20,000 ש״ח</div>
           </div>
 
           <div className="flex flex-nowrap justify-center gap-1 overflow-x-auto pb-1 md:gap-3">
@@ -221,9 +233,16 @@ export default function App() {
         <div className="relative z-20 container mx-auto flex min-h-[92vh] items-center px-4 py-14">
           <div className="mx-auto max-w-5xl text-center">
             <motion.div initial={{ opacity : 0, y : 24 }} animate={{ opacity : 1, y : 0 }} transition={{ duration : 0.8 }}>
-              <span className="mb-6 mt-10 inline-block rounded-full px-5 py-2 text-sm font-black uppercase tracking-[0.25em] md:mt-0 md:text-base" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+              <span className="mb-4 mt-10 inline-block rounded-full px-5 py-2 text-sm font-black uppercase tracking-[0.25em] md:mt-0 md:text-base" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
                 ISEF 2050 HACKATHON
               </span>
+
+              <div
+                className="mb-4 inline-flex items-center rounded-full px-5 py-2 text-lg font-black md:text-2xl"
+                style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
+              >
+                תמיד חלמת להיות יזם?
+              </div>
 
               <h1 className="mb-5 text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-8xl">
                 הופכים רעיונות
@@ -235,6 +254,10 @@ export default function App() {
                 האקתון יומי לקהילת אייסף - מגיעים עם רצון לשנות ויוצאים עם רעיון מגובש.
               </p>
 
+              <p className="mx-auto mb-3 max-w-2xl text-2xl font-bold md:text-3xl" style={{ color : ISEF_ORANGE }}>
+                פרס ראשון: עד 20,000 ש״ח
+              </p>
+
               <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
                 צריך רק רצון לנסות
               </p>
@@ -242,7 +265,7 @@ export default function App() {
               <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
                 <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
                   <div className="text-lg font-bold text-blue-100 md:text-xl">אירוע ההאקתון המרכזי</div>
-                  <div className="text-3xl font-black">28.5 | 9:00-20:00</div>
+                  <div className="text-3xl font-black">28.5 | 09:00-20:00</div>
 
                   <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
                     <MapPin className="h-5 w-5" />
@@ -250,10 +273,8 @@ export default function App() {
                   </div>
 
                   <div className="mt-4 border-t border-white/15 pt-4 text-center">
-                    <div className="text-base font-bold text-blue-100 md:text-lg">דמי השתתפות</div>
-                    <div className="mt-1 text-lg font-black md:text-xl">בוגרים - 100 ש״ח | סטודנטים - 50% הנחה</div>
-                    <div className="mt-3 text-base font-bold text-blue-100 md:text-lg">פרס ראשון</div>
-                    <div className="mt-1 text-xl font-black md:text-2xl">עד 20,000 ש״ח</div>
+                    <div className="text-base font-bold text-blue-100 md:text-lg">פרס ראשון</div>
+                    <div className="mt-1 text-2xl font-black md:text-3xl" style={{ color : ISEF_ORANGE }}>עד 20,000 ש״ח</div>
                   </div>
                 </div>
 
@@ -274,6 +295,72 @@ export default function App() {
         </div>
       </header>
 
+      <section className="bg-white py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>הכירו את מובילי האירוע</h2>
+            <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
+              יום מלא בהשראה, יזמות, חדשנות ולמידה ממובילים מהשטח ומהאקדמיה.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div
+              className="overflow-hidden rounded-[32px] bg-white"
+              style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-[240px_1fr]">
+                <div className="h-full min-h-[320px]">
+                  <img src="/images/shir.jpeg" alt="שיר אלקיים לוצאטו" className="h-full w-full object-cover" />
+                </div>
+
+                <div className="p-7 md:p-8">
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+                    <Sparkles className="h-4 w-4" />
+                    מובילת האירוע
+                  </div>
+
+                  <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>שיר אלקיים לוצאטו</h3>
+                  <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-xl">מובילת אירוע ISEF 2050</p>
+                  <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
+                    שיר תוביל את היום כולו, מהפתיחה וההשראה הראשונית ועד לליווי החוויה, החיבורים והאנרגיה שיניעו את המשתתפים להפוך רעיונות לפתרונות אמיתיים.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="overflow-hidden rounded-[32px] bg-white"
+              style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
+                <div className="h-full min-h-[280px] bg-zinc-50">
+                  <img src="/images/haim.png" alt="פרופ׳ חיים סוקולובסקי" className="h-full w-full object-cover" />
+                </div>
+
+                <div className="p-7 md:p-8">
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+                    <Mic className="h-4 w-4" />
+                    הרצאת אורח
+                  </div>
+
+                  <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>פרופ׳ חיים סוקולובסקי</h3>
+                  <p className="mb-4 text-xl font-black leading-snug" style={{ color : ISEF_ORANGE }}>
+                    Deep Tech: איך באמת משנים את העולם
+                    <br />
+                    <span className="text-lg font-bold text-zinc-600">(מהמחקר, דרך השוק, ועד חדשנות משבשת)</span>
+                  </p>
+
+                  <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
+                    הרצאה מיוחדת על המסלול שבין מחקר עמוק, הזדמנות אמיתית בשוק ובניית חדשנות שיכולה לשנות תחומים שלמים בעולם.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-zinc-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
@@ -291,61 +378,61 @@ export default function App() {
         </div>
       </section>
 
-     <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor : ISEF_BLUE }}>
-  <div className="absolute left-8 top-28 hidden h-64 w-64 overflow-hidden rounded-[32px] border-4 opacity-20 lg:block" style={{ borderColor : ISEF_ORANGE }}>
-    <img src="/images/event-3.jpeg" alt="" className="h-full w-full object-cover" />
-  </div>
+      <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor : ISEF_BLUE }}>
+        <div className="absolute left-8 top-28 hidden h-64 w-64 overflow-hidden rounded-[32px] border-4 opacity-20 lg:block" style={{ borderColor : ISEF_ORANGE }}>
+          <img src="/images/event-3.jpeg" alt="" className="h-full w-full object-cover" />
+        </div>
 
-  <div className="container relative z-10 mx-auto px-4">
-    <div className="mb-12 text-center">
-      <h2 className="text-5xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
-    </div>
-
-    <div ref={timelineRef} className="relative mx-auto max-w-5xl">
-      <div className="absolute right-4 top-0 h-full w-[2px] rounded-full bg-white/15 md:right-1/2 md:w-1 md:translate-x-1/2" />
-      <div
-        className="absolute right-4 top-0 w-[2px] rounded-full transition-all duration-200 md:right-1/2 md:w-1 md:translate-x-1/2"
-        style={{ backgroundColor : ISEF_ORANGE, height : `${timelineProgress * 100}%` }}
-      />
-
-      <div className="space-y-6 md:space-y-8">
-        {timeline.map((item, index) => (
-          <div key={item.title} className="relative pr-12 md:grid md:grid-cols-2 md:gap-8 md:pr-0">
-            <div className={`${index % 2 === 0 ? 'md:pr-16' : 'md:order-2 md:pl-16'} text-right`}>
-              <div className="flex min-h-[170px] flex-col justify-center rounded-3xl bg-white/8 p-6 backdrop-blur-sm md:min-h-[190px] md:p-7">
-                <div className="mb-2 text-xl font-black md:text-2xl" style={{ color : ISEF_ORANGE }}>
-                  {item.date}
-                </div>
-                <h3 className="mb-2 text-2xl font-black text-white md:text-3xl">
-                  {item.title}
-                </h3>
-                <p className="text-lg leading-relaxed text-blue-100">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-
-            <div className="absolute right-[9px] top-1/2 -translate-y-1/2 md:absolute md:right-1/2 md:top-1/2 md:translate-x-1/2 md:-translate-y-1/2">
-              <div
-                className="h-4 w-4 rounded-full border-2 border-white shadow-[0_0_0_4px_rgba(245,130,31,0.15)] md:h-5 md:w-5 md:border-4"
-                style={{ backgroundColor : ISEF_ORANGE }}
-              />
-            </div>
-
-            <div className={`hidden md:block ${index % 2 === 0 ? 'md:order-2' : ''}`} />
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-5xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+
+          <div ref={timelineRef} className="relative mx-auto max-w-5xl">
+            <div className="absolute right-4 top-0 h-full w-[2px] rounded-full bg-white/15 md:right-1/2 md:w-1 md:translate-x-1/2" />
+            <div
+              className="absolute right-4 top-0 w-[2px] rounded-full transition-all duration-200 md:right-1/2 md:w-1 md:translate-x-1/2"
+              style={{ backgroundColor : ISEF_ORANGE, height : `${timelineProgress * 100}%` }}
+            />
+
+            <div className="space-y-6 md:space-y-8">
+              {timeline.map((item, index) => (
+                <div key={item.title} className="relative pr-12 md:grid md:grid-cols-2 md:gap-8 md:pr-0">
+                  <div className={`${index % 2 === 0 ? 'md:pr-16' : 'md:order-2 md:pl-16'} text-right`}>
+                    <div className="flex min-h-[170px] flex-col justify-center rounded-3xl bg-white/8 p-6 backdrop-blur-sm md:min-h-[190px] md:p-7">
+                      <div className="mb-2 text-xl font-black md:text-2xl" style={{ color : ISEF_ORANGE }}>
+                        {item.date}
+                      </div>
+                      <h3 className="mb-2 text-2xl font-black text-white md:text-3xl">
+                        {item.title}
+                      </h3>
+                      <p className="text-lg leading-relaxed text-blue-100">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="absolute right-[9px] top-1/2 -translate-y-1/2 md:absolute md:right-1/2 md:top-1/2 md:translate-x-1/2 md:-translate-y-1/2">
+                    <div
+                      className="h-4 w-4 rounded-full border-2 border-white shadow-[0_0_0_4px_rgba(245,130,31,0.15)] md:h-5 md:w-5 md:border-4"
+                      style={{ backgroundColor : ISEF_ORANGE }}
+                    />
+                  </div>
+
+                  <div className={`hidden md:block ${index % 2 === 0 ? 'md:order-2' : ''}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-zinc-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
             <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>אתגרי הליבה</h2>
             <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
-              בחרו אחד מתאגרי הליבה הבאים -.
+              בחרו אתגר אחד: זהו נקודת כאב ברורה, והתמקדו בפתרון שניתן לבנייה ולהדגמה.
             </p>
           </div>
 
@@ -401,8 +488,9 @@ export default function App() {
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מה צפוי ביום ההאקתון</h2>
+          <p className="mb-10 text-center text-xl text-zinc-500">המבנה המדויק עוד מתעדכן, אבל זה הכיוון הכללי של היום</p>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {dayFlow.map((item) => (
               <div key={item.title} className="rounded-[28px] bg-zinc-50 p-6 md:p-7" style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}>
                 <div className="mb-3 flex items-center gap-3">
@@ -422,7 +510,7 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
             <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים לבנות את העתיד?</h2>
-            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו ליום שלם של חדשנות, יצירה ומשמעות.</p>
+            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו ליום שלם של חדשנות, יצירה, השראה והזדמנות לבנות מיזם עם אימפקט אמיתי.</p>
           </div>
 
           <div className="mx-auto mb-6 max-w-4xl rounded-[28px] border bg-white p-5 text-center md:p-6" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
