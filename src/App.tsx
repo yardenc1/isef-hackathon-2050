@@ -293,73 +293,109 @@ export default function App() {
       </p>
     </div>
 
-    <div className="mb-14">
-      <div className="mb-5 text-right">
-        <h3 className="text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>מובילת האירוע</h3>
-      </div>
-
-      <div
-        className="overflow-hidden rounded-[32px] bg-white"
+    {/* ===== מובילת האירוע ===== */}
+    <div className="mb-12">
+      <div className="overflow-hidden rounded-[32px] bg-white"
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr]">
-          <div className="h-full min-h-[320px]">
-            <img src="/images/shir.jpeg" alt="שיר אלקיים לוצאטו" className="h-full w-full object-cover" />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px]">
 
-          <div className="p-7 md:p-10 text-right">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-              <Sparkles className="h-4 w-4" />
+          <div className="p-8 text-right">
+            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
+              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
               מובילת האירוע
             </div>
 
-            <h3 className="mb-2 text-3xl font-black md:text-5xl" style={{ color : ISEF_BLUE }}>שיר אלקיים לוצאטו</h3>
-            <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-2xl">
-              דוקטורנטית לכלכלה וניהול באייסף, חברת סגל MBA במרכז האקדמי פרס, מנכ״לית Impact360 להרצאה טכנולוגית.
+            <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+              שיר אלקיים לוצאטו
+            </h3>
+
+            <p className="mb-4 text-gray-700">
+              דוקטורנטית לכלכלה וניהול באוניברסיטת אוקספורד, חברת סגל MBA במרכז האקדמי פרס ומנכ״לית Impact360.
             </p>
 
-            <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
-              שיר תוביל את היום כולו, מהפתיחה וההשראה הראשונית ועד לליווי החוויה, החיבורים והאנרגיה שיניעו את המשתתפים להפוך רעיונות לפתרונות אמיתיים.
+            <p className="text-gray-600">
+              תוביל את היום כולו - מהפתיחה והשראה ראשונית ועד ליווי החזון, החיבורים והאנרגיה שיניעו את המשתתפים לפתרונות אמיתיים.
             </p>
           </div>
+
+          <img src="/images/shir.jpg" className="h-full w-full object-cover" />
         </div>
       </div>
     </div>
 
-    <div className="mb-14">
-      <div className="mb-5 text-right">
-        <h3 className="text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>הרצאת אורח</h3>
-      </div>
+    {/* ===== הרצאות אורח ===== */}
+    <h3 className="mb-6 text-2xl font-black text-right" style={{ color : ISEF_BLUE }}>
+      הרצאות אורח
+    </h3>
 
-      <div
-        className="overflow-hidden rounded-[32px] bg-white"
+    <div className="mb-12">
+      <div className="overflow-hidden rounded-[32px] bg-white"
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr]">
-          <div className="h-full min-h-[280px] bg-zinc-50">
-            <img src="/images/haim.jpeg" alt="פרופ׳ חיים סוכובסקי" className="h-full w-full object-cover" />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
 
-          <div className="p-7 md:p-8 text-right">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-              <Mic className="h-4 w-4" />
+          <img src="/images/haim.jpeg" className="h-full w-full object-cover" />
+
+          <div className="p-8 text-right">
+            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
+              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
               הרצאת אורח
             </div>
 
-            <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>פרופ׳ חיים סוקולובסקי</h3>
-            <p className="mb-4 text-xl font-black leading-snug" style={{ color : ISEF_ORANGE }}>
-              Deep Tech: איך באמת משנים את העולם
-              <br />
-              <span className="text-lg font-bold text-zinc-600">(מהמחקר, דרך השוק, ועד חדשנות משבשת)</span>
+            <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+              פרופ׳ חיים סוכובסקי
+            </h3>
+
+            <p className="mb-4 text-gray-700">
+              פיזיקאי וחוקר מוביל בתחום הננופוטוניקה והאופטיקה המתקדמת, העוסק בפיתוח טכנולוגיות Deep Tech המבוססות על אינטראקציות אור-חומר.
             </p>
 
-            <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
-              הרצאה מיוחדת על המסלול שבין מחקר עמוק, הזדמנות אמיתית בשוק ובניית חדשנות שיכולה לשנות תחומים שלמים בעולם.
+            <p className="text-gray-600">
+              הרצאת אורח: Deep Tech - איך באמת משנים את העולם (מהמחקר, דרך השוק, ועד חדשנות משבשת).
             </p>
           </div>
         </div>
       </div>
     </div>
+
+    {/* ===== מנטורים ===== */}
+    <h3 className="mb-6 text-2xl font-black text-right" style={{ color : ISEF_BLUE }}>
+      מנטורים
+    </h3>
+
+    <div>
+      <div className="overflow-hidden rounded-[32px] bg-white"
+        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
+
+          <img src="/images/inna.jpeg" className="h-full w-full object-cover" />
+
+          <div className="p-8 text-right">
+            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
+              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+              מנטורית
+            </div>
+
+            <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+              אינה ברנפלד גייזמן
+            </h3>
+
+            <p className="mb-4 text-gray-700">
+              מנהלת פיתוח עסקי ושותפויות אסטרטגיות בתחום הענן, מובילה תהליכי טרנספורמציה דיגיטלית בארגונים ממשלתיים וארגונים גדולים.
+            </p>
+
+            <p className="text-gray-600">
+              תלווה צוותים בפיתוח רעיונות, חיבור בין טכנולוגיה לעולם האמיתי, ובניית פתרונות עם חשיבה מערכתית והשפעה רחבה.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <div>
       <div className="mb-5 text-right">
