@@ -254,10 +254,6 @@ export default function App() {
                 האקתון יומי לקהילת אייסף - מגיעים עם רצון לשנות ויוצאים עם רעיון מגובש.
               </p>
 
-              <p className="mx-auto mb-3 max-w-2xl text-2xl font-bold md:text-3xl" style={{ color : ISEF_ORANGE }}>
-                פרס ראשון: עד 20,000 ש״ח
-              </p>
-
               <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
                 צריך רק רצון לנסות
               </p>
