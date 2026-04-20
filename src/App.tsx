@@ -331,7 +331,7 @@ export default function App() {
             >
               <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
                 <div className="h-full min-h-[280px] bg-zinc-50">
-                  <img src="/images/haim.jpeg" alt="פרופ׳ חיים סוקולובסקי" className="h-full w-full object-cover" />
+                  <img src="/images/haim.jpeg" alt="פרופ׳ חיים סוכובסקי" className="h-full w-full object-cover" />
                 </div>
 
                 <div className="p-7 md:p-8">
