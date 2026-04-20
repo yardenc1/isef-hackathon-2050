@@ -315,7 +315,7 @@ export default function App() {
 
             <h3 className="mb-2 text-3xl font-black md:text-5xl" style={{ color : ISEF_BLUE }}>שיר אלקיים לוצאטו</h3>
             <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-2xl">
-              דוקטורנטית לכלכלה וניהול באייסף, חברת סגל MBA במרכז האקדמי פרס, מנכ״לית Impact360 להרצאה טכנולוגית
+              דוקטורנטית לכלכלה וניהול באייסף, חברת סגל MBA במרכז האקדמי פרס, מנכ״לית Impact360 להרצאה טכנולוגית.
             </p>
 
             <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
@@ -337,7 +337,7 @@ export default function App() {
       >
         <div className="grid grid-cols-1 md:grid-cols-[240px_1fr]">
           <div className="h-full min-h-[280px] bg-zinc-50">
-            <img src="/images/haim.png" alt="פרופ׳ חיים סוקולובסקי" className="h-full w-full object-cover" />
+            <img src="/images/haim.jpeg" alt="פרופ׳ חיים סוכובסקי" className="h-full w-full object-cover" />
           </div>
 
           <div className="p-7 md:p-8 text-right">
