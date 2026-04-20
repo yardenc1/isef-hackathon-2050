@@ -237,13 +237,6 @@ export default function App() {
                 ISEF 2050 HACKATHON
               </span>
 
-              <div
-                className="mb-4 inline-flex items-center rounded-full px-5 py-2 text-lg font-black md:text-2xl"
-                style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
-              >
-                תמיד חלמת להיות יזם?
-              </div>
-
               <h1 className="mb-5 text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-8xl">
                 הופכים רעיונות
                 <br />
