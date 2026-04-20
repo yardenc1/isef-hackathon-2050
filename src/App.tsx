@@ -284,72 +284,99 @@ export default function App() {
         </div>
       </header>
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>הכירו את מובילי האירוע</h2>
-            <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
-              יום מלא בהשראה, יזמות, חדשנות ולמידה ממובילים מהשטח ומהאקדמיה.
+   <section className="bg-white py-16 md:py-20">
+  <div className="container mx-auto px-4">
+    <div className="mb-12 text-center">
+      <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מי מחכה לכם ביום ההאקתון</h2>
+      <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
+        יום מלא בהשראה, יזמות, חיבורים ולמידה מאנשים שילוו את המשתתפים לאורך הדרך.
+      </p>
+    </div>
+
+    <div className="mb-14">
+      <div className="mb-5 text-right">
+        <h3 className="text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>מובילת האירוע</h3>
+      </div>
+
+      <div
+        className="overflow-hidden rounded-[32px] bg-white"
+        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr]">
+          <div className="h-full min-h-[320px]">
+            <img src="/images/shir.jpeg" alt="שיר אלקיים לוצאטו" className="h-full w-full object-cover" />
+          </div>
+
+          <div className="p-7 md:p-10 text-right">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+              <Sparkles className="h-4 w-4" />
+              מובילת האירוע
+            </div>
+
+            <h3 className="mb-2 text-3xl font-black md:text-5xl" style={{ color : ISEF_BLUE }}>שיר אלקיים לוצאטו</h3>
+            <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-2xl">
+              דוקטורנטית לכלכלה וניהול באייסף, חברת סגל MBA במרכז האקדמי פרס, מנכ״לית Impact360 להרצאה טכנולוגית
+            </p>
+
+            <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
+              שיר תוביל את היום כולו, מהפתיחה וההשראה הראשונית ועד לליווי החוויה, החיבורים והאנרגיה שיניעו את המשתתפים להפוך רעיונות לפתרונות אמיתיים.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <div
-              className="overflow-hidden rounded-[32px] bg-white"
-              style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-[240px_1fr]">
-                <div className="h-full min-h-[320px]">
-                  <img src="/images/shir.jpeg" alt="שיר אלקיים לוצאטו" className="h-full w-full object-cover" />
-                </div>
+    <div className="mb-14">
+      <div className="mb-5 text-right">
+        <h3 className="text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>הרצאת אורח</h3>
+      </div>
 
-                <div className="p-7 md:p-8">
-                  <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-                    <Sparkles className="h-4 w-4" />
-                    מובילת האירוע
-                  </div>
+      <div
+        className="overflow-hidden rounded-[32px] bg-white"
+        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr]">
+          <div className="h-full min-h-[280px] bg-zinc-50">
+            <img src="/images/haim.png" alt="פרופ׳ חיים סוקולובסקי" className="h-full w-full object-cover" />
+          </div>
 
-                  <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>שיר אלקיים לוצאטו</h3>
-                  <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-xl">דוקטורנטית לכלכלה וניהול באייסף, חברת סגל MBA במרכז האקדמי פרס, מנכ״לית Impact360 להאצה טכנולוגית</p>
-                  <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
-                    שיר תוביל את היום כולו, מהפתיחה וההשראה הראשונית ועד לליווי החוויה, החיבורים והאנרגיה שיניעו את המשתתפים להפוך רעיונות לפתרונות אמיתיים.
-                  </p>
-                </div>
-              </div>
+          <div className="p-7 md:p-8 text-right">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+              <Mic className="h-4 w-4" />
+              הרצאת אורח
             </div>
 
-            <div
-              className="overflow-hidden rounded-[32px] bg-white"
-              style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
-                <div className="h-full min-h-[280px] bg-zinc-50">
-                  <img src="/images/haim.jpeg" alt="פרופ׳ חיים סוכובסקי" className="h-full w-full object-cover" />
-                </div>
+            <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>פרופ׳ חיים סוקולובסקי</h3>
+            <p className="mb-4 text-xl font-black leading-snug" style={{ color : ISEF_ORANGE }}>
+              Deep Tech: איך באמת משנים את העולם
+              <br />
+              <span className="text-lg font-bold text-zinc-600">(מהמחקר, דרך השוק, ועד חדשנות משבשת)</span>
+            </p>
 
-                <div className="p-7 md:p-8">
-                  <div className="mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-                    <Mic className="h-4 w-4" />
-                    הרצאת אורח
-                  </div>
-
-                  <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>פרופ׳ חיים סוקולובסקי</h3>
-                  <p className="mb-4 text-xl font-black leading-snug" style={{ color : ISEF_ORANGE }}>
-                    Deep Tech: איך באמת משנים את העולם
-                    <br />
-                    <span className="text-lg font-bold text-zinc-600">(מהמחקר, דרך השוק, ועד חדשנות משבשת)</span>
-                  </p>
-
-                  <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
-                    הרצאה מיוחדת על המסלול שבין מחקר עמוק, הזדמנות אמיתית בשוק ובניית חדשנות שיכולה לשנות תחומים שלמים בעולם.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
+              הרצאה מיוחדת על המסלול שבין מחקר עמוק, הזדמנות אמיתית בשוק ובניית חדשנות שיכולה לשנות תחומים שלמים בעולם.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
 
+    <div>
+      <div className="mb-5 text-right">
+        <h3 className="text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>מנטורי הצוותים</h3>
+        <p className="mt-2 text-lg text-zinc-600 md:text-xl">
+          לאורך היום יחכו לכם מנטורים שילוו את תהליך החשיבה, הבנייה, הדיוק והפיץ׳.
+        </p>
+      </div>
+
+      <div className="rounded-[32px] border-2 border-dashed p-8 text-right" style={{ borderColor : ISEF_BLUE }}>
+        <p className="text-lg font-semibold text-zinc-600 md:text-xl">
+          כאן יופיעו בהמשך המנטורים שילוו את הצוותים במהלך ההאקתון.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       <section className="bg-zinc-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
