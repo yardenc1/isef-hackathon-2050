@@ -317,7 +317,7 @@ export default function App() {
                   </div>
 
                   <h3 className="mb-2 text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>שיר אלקיים לוצאטו</h3>
-                  <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-xl">מובילת אירוע ISEF 2050</p>
+                  <p className="mb-4 text-lg font-semibold text-zinc-500 md:text-xl">דוקטורנטית לכלכלה וניהול באייסף, חברת סגל MBA במרכז האקדמי פרס, מנכ״לית Impact360 להאצה טכנולוגית</p>
                   <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">
                     שיר תוביל את היום כולו, מהפתיחה וההשראה הראשונית ועד לליווי החוויה, החיבורים והאנרגיה שיניעו את המשתתפים להפוך רעיונות לפתרונות אמיתיים.
                   </p>
