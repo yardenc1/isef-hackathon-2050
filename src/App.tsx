@@ -284,10 +284,12 @@ export default function App() {
         </div>
       </header>
 
-   <section className="bg-white py-16 md:py-20">
+<section className="bg-white py-16 md:py-20">
   <div className="container mx-auto px-4">
     <div className="mb-12 text-center">
-      <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מי מחכה לכם ביום ההאקתון</h2>
+      <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
+        מי מחכה לכם ביום ההאקתון
+      </h2>
       <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
         יום מלא בהשראה, יזמות, חיבורים ולמידה מאנשים שילוו את המשתתפים לאורך הדרך.
       </p>
@@ -299,7 +301,6 @@ export default function App() {
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
         <div className="grid grid-cols-1 md:grid-cols-[1fr_260px]">
-
           <div className="p-8 text-right">
             <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
@@ -315,7 +316,7 @@ export default function App() {
             </p>
 
             <p className="text-gray-600">
-              תוביל את היום כולו - מהפתיחה והשראה ראשונית ועד ליווי החזון, החיבורים והאנרגיה שיניעו את המשתתפים לפתרונות אמיתיים.
+              תוביל את היום כולו - מהפתיחה ועד ליווי המשתתפים לפתרונות אמיתיים.
             </p>
           </div>
 
@@ -348,11 +349,11 @@ export default function App() {
             </h3>
 
             <p className="mb-4 text-gray-700">
-              פיזיקאי וחוקר מוביל בתחום הננופוטוניקה והאופטיקה המתקדמת, העוסק בפיתוח טכנולוגיות Deep Tech המבוססות על אינטראקציות אור-חומר.
+              פיזיקאי וחוקר בתחום הננופוטוניקה והאופטיקה המתקדמת.
             </p>
 
             <p className="text-gray-600">
-              הרצאת אורח: Deep Tech - איך באמת משנים את העולם (מהמחקר, דרך השוק, ועד חדשנות משבשת).
+              הרצאת אורח: Deep Tech - איך באמת משנים את העולם.
             </p>
           </div>
         </div>
@@ -364,7 +365,7 @@ export default function App() {
       מנטורים
     </h3>
 
-    <div>
+    <div className="mb-12">
       <div className="overflow-hidden rounded-[32px] bg-white"
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
@@ -383,11 +384,11 @@ export default function App() {
             </h3>
 
             <p className="mb-4 text-gray-700">
-              מנהלת פיתוח עסקי ושותפויות אסטרטגיות בתחום הענן, מובילה תהליכי טרנספורמציה דיגיטלית בארגונים ממשלתיים וארגונים גדולים.
+              מובילה תהליכי טרנספורמציה דיגיטלית ושותפויות בענן בארגונים גדולים.
             </p>
 
             <p className="text-gray-600">
-              תלווה צוותים בפיתוח רעיונות, חיבור בין טכנולוגיה לעולם האמיתי, ובניית פתרונות עם חשיבה מערכתית והשפעה רחבה.
+              תלווה צוותים בפיתוח רעיונות ובניית פתרונות עם השפעה אמיתית.
             </p>
           </div>
         </div>
@@ -396,39 +397,6 @@ export default function App() {
 
   </div>
 </section>
-
-    <div>
-      <div className="mb-5 text-right">
-        <h3 className="text-3xl font-black md:text-4xl" style={{ color : ISEF_BLUE }}>מנטורי הצוותים</h3>
-        <p className="mt-2 text-lg text-zinc-600 md:text-xl">
-          לאורך היום יחכו לכם מנטורים שילוו את תהליך החשיבה, הבנייה, הדיוק והפיץ׳.
-        </p>
-      </div>
-
-      <div className="rounded-[32px] border-2 border-dashed p-8 text-right" style={{ borderColor : ISEF_BLUE }}>
-        <p className="text-lg font-semibold text-zinc-600 md:text-xl">
-          כאן יופיעו בהמשך המנטורים שילוו את הצוותים במהלך ההאקתון.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-      <section className="bg-zinc-50 py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="mb-10 text-center">
-            <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>כל מה שצריך לדעת</h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {infoCards.map((item) => (
-              <div key={item.title} className="rounded-[28px] bg-white p-7" style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}>
-                <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>{item.title}</h3>
-                <p className="text-lg leading-relaxed text-zinc-600 md:text-xl">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor : ISEF_BLUE }}>
         <div className="absolute left-8 top-28 hidden h-64 w-64 overflow-hidden rounded-[32px] border-4 opacity-20 lg:block" style={{ borderColor : ISEF_ORANGE }}>
