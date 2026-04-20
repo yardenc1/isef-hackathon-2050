@@ -3,20 +3,11 @@ import React from 'react';
 const ISEF_BLUE = '#1B2F6E';
 const ISEF_ORANGE = '#F5821F';
 
-const GRADUATES_PAYMENT_LINK = 'https://live.payme.io/sale/template/SALE1774-602901WM-MDBG3GV8-65VKIUXZ';
-const STUDENTS_PAYMENT_LINK = 'https://live.payme.io/sale/template/SALE1774-6028450H-7MVRQMBF-0NIP3KXR';
-
 export function RegistrationForm() {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [submittedStatus, setSubmittedStatus] = React.useState('');
 
   if (isSubmitted) {
-    const paymentLink = submittedStatus === 'סטודנט/ית אייסף' ? STUDENTS_PAYMENT_LINK : GRADUATES_PAYMENT_LINK;
-    const paymentLabel = submittedStatus === 'סטודנט/ית אייסף'
-      ? 'לתשלום 50 ש״ח לסטודנטים'
-      : 'לתשלום 100 ש״ח לבוגרים';
-
     return (
       <div
         style={{
@@ -33,26 +24,12 @@ export function RegistrationForm() {
         <h3 style={{ fontSize : '1.5rem', fontWeight : 'bold', color : ISEF_BLUE, marginBottom : '8px' }}>
           תודה שנרשמת!
         </h3>
-        <p style={{ color : '#166534', marginBottom : '20px', lineHeight : 1.6 }}>
-          הפרטים שלך התקבלו. כדי להשלים את ההרשמה יש לבצע תשלום לפי הסטטוס שבחרת.
+        <p style={{ color : '#166534', marginBottom : '12px', lineHeight : 1.6 }}>
+          הפרטים שלך התקבלו בהצלחה.
         </p>
-
-        <a
-          href={paymentLink}
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            display : 'inline-block',
-            padding : '14px 24px',
-            textDecoration : 'none',
-            backgroundColor : ISEF_ORANGE,
-            color : ISEF_BLUE,
-            fontWeight : 'bold',
-            borderRadius : '12px',
-          }}
-        >
-          {paymentLabel}
-        </a>
+        <p style={{ color : '#166534', lineHeight : 1.6 }}>
+          ניצור קשר בהמשך עם כל הפרטים הרלוונטיים לקראת האירוע.
+        </p>
       </div>
     );
   }
@@ -107,7 +84,6 @@ export function RegistrationForm() {
         return;
       }
 
-      setSubmittedStatus(data.status);
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -227,22 +203,6 @@ export function RegistrationForm() {
         <div>
           <label style={labelStyle}>הערות נוספות</label>
           <textarea name="notes" rows={3} style={textareaStyle} />
-        </div>
-
-        <div
-          style={{
-            backgroundColor : '#FFF8F0',
-            border : `1px solid rgba(27,47,110,0.12)`,
-            borderRadius : '12px',
-            padding : '16px',
-            textAlign : 'center',
-          }}
-        >
-          <div style={{ fontWeight : 'bold', color : ISEF_BLUE, marginBottom : '6px' }}>דמי השתתפות</div>
-          <div style={{ color : '#52525b', lineHeight : 1.7 }}>
-            בוגרים - 100 ש״ח<br />
-            סטודנטים - 50 ש״ח
-          </div>
         </div>
 
         <button
