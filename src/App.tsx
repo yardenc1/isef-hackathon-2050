@@ -286,7 +286,9 @@ export default function App() {
 
 <section className="bg-white py-16 md:py-20">
   <div className="container mx-auto px-4">
-    <div className="mb-12 text-center">
+
+    {/* ===== HEADER ===== */}
+    <div className="mb-16 text-center">
       <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
         מי מחכה לכם ביום ההאקתון
       </h2>
@@ -295,15 +297,23 @@ export default function App() {
       </p>
     </div>
 
-    {/* ===== מובילת האירוע ===== */}
-    <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
-        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+    {/* ===== CARD ===== */}
+    <div className="mb-16">
+      <div
+        className="overflow-hidden rounded-[32px] bg-white"
+        style={{
+          border : `2px solid ${ISEF_BLUE}`,
+          boxShadow : `8px 8px 0 ${ISEF_ORANGE}`
+        }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px]">
-          <div className="p-8 text-right">
-            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
-              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+        <div className="flex flex-col md:flex-row">
+
+          {/* TEXT */}
+          <div className="flex-1 p-8 text-right flex flex-col justify-center">
+            <div
+              className="mb-3 inline-flex w-fit rounded-full px-4 py-2 text-sm font-black"
+              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
+            >
               מובילת האירוע
             </div>
 
@@ -320,10 +330,20 @@ export default function App() {
             </p>
           </div>
 
-          <img src="/images/shir.jpeg" className="h-full w-full object-cover" />
+          {/* IMAGE */}
+          <div className="w-full md:w-[280px] h-[260px] md:h-auto">
+            <img
+              src="/images/shir.jpeg"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
         </div>
       </div>
     </div>
+
+  </div>
+</section>
 
     {/* ===== הרצאות אורח ===== */}
     <h3 className="mb-6 text-2xl font-black text-right" style={{ color : ISEF_BLUE }}>
