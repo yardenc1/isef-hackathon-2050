@@ -286,6 +286,8 @@ export default function App() {
 
 <section className="bg-white py-16 md:py-20">
   <div className="container mx-auto px-4">
+    
+    {/* כותרת */}
     <div className="mb-12 text-center">
       <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
         מי מחכה לכם ביום ההאקתון
@@ -297,11 +299,14 @@ export default function App() {
 
     {/* ===== מובילת האירוע ===== */}
     <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
+      <div
+        className="overflow-hidden rounded-[32px] bg-white min-h-[240px]"
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px]">
-          <div className="p-8 text-right">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] items-stretch h-full">
+
+          {/* טקסט */}
+          <div className="p-8 text-right flex flex-col justify-center">
             <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
               מובילת האירוע
@@ -312,7 +317,7 @@ export default function App() {
             </h3>
 
             <p className="mb-4 text-gray-700">
-              דוקטורנטית לכלכלה וניהול באוניברסיטת אוקספורד, חברת סגל MBA במרכז האקדמי פרס ומנכ״לית Impact360.
+              דוקטורנטית לכלכלה וניהול באוניברסיטת אוקספורד, חברת סגל MBA ומנכ״לית Impact360.
             </p>
 
             <p className="text-gray-600">
@@ -320,7 +325,11 @@ export default function App() {
             </p>
           </div>
 
-          <img src="/images/shir.jpeg" className="h-full w-full object-cover" />
+          {/* תמונה */}
+          <div className="h-full">
+            <img src="/images/shir.jpeg" className="h-full w-full object-cover" />
+          </div>
+
         </div>
       </div>
     </div>
@@ -331,14 +340,14 @@ export default function App() {
     </h3>
 
     <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
+      <div
+        className="overflow-hidden rounded-[32px] bg-white min-h-[240px]"
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] items-stretch h-full">
 
-          <img src="/images/haim.jpeg" className="h-full w-full object-cover" />
-
-          <div className="p-8 text-right">
+          {/* טקסט */}
+          <div className="p-8 text-right flex flex-col justify-center">
             <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
               הרצאת אורח
@@ -356,6 +365,12 @@ export default function App() {
               הרצאת אורח: Deep Tech - איך באמת משנים את העולם.
             </p>
           </div>
+
+          {/* תמונה */}
+          <div className="h-full">
+            <img src="/images/haim.jpeg" className="h-full w-full object-cover" />
+          </div>
+
         </div>
       </div>
     </div>
@@ -366,14 +381,14 @@ export default function App() {
     </h3>
 
     <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
+      <div
+        className="overflow-hidden rounded-[32px] bg-white min-h-[240px]"
         style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] items-stretch h-full">
 
-          <img src="/images/inna.jpg" className="h-full w-full object-cover" />
-
-          <div className="p-8 text-right">
+          {/* טקסט */}
+          <div className="p-8 text-right flex flex-col justify-center">
             <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
               מנטורית
@@ -391,6 +406,12 @@ export default function App() {
               תלווה צוותים בפיתוח רעיונות ובניית פתרונות עם השפעה אמיתית.
             </p>
           </div>
+
+          {/* תמונה */}
+          <div className="h-full">
+            <img src="/images/inna.jpg" className="h-full w-full object-cover" />
+          </div>
+
         </div>
       </div>
     </div>
