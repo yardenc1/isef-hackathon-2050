@@ -313,7 +313,9 @@ export default function App() {
 
 <section className="bg-white py-16 md:py-20">
   <div className="container mx-auto px-4">
-    <div className="mb-12 text-center">
+
+    {/* HEADER */}
+    <div className="mb-16 text-center">
       <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
         מי מחכה לכם ביום ההאקתון
       </h2>
@@ -322,201 +324,95 @@ export default function App() {
       </p>
     </div>
 
-    {/* ===== מובילת האירוע ===== */}
-    <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
-        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px]">
-          <div className="p-8 text-right">
-            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
-              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-              מובילת האירוע
+    {/* ===== CARD TEMPLATE ===== */}
+    {[
+      {
+        label : 'מובילת האירוע',
+        name : 'שיר אלקיים לוצאטו',
+        img : '/images/shir.jpeg',
+        desc : 'דוקטורנטית לכלכלה וניהול, חברת סגל MBA ומנכ״לית Impact360.',
+        sub : 'תוביל את היום כולו - מהפתיחה ועד ליווי המשתתפים.'
+      },
+      {
+        label : 'הרצאת אורח',
+        name : 'פרופ׳ חיים סוכובסקי',
+        img : '/images/haim.jpeg',
+        desc : 'פיזיקאי וחוקר בתחום הננופוטוניקה והאופטיקה המתקדמת.',
+        sub : 'הרצאת אורח: Deep Tech - איך באמת משנים את העולם.'
+      },
+      {
+        label : 'מנטורית',
+        name : 'אינה ברנפלד גייזמן',
+        img : '/images/inna.jpg',
+        desc : 'מובילה תהליכי טרנספורמציה דיגיטלית ושותפויות בענן.',
+        sub : 'תלווה צוותים בפיתוח רעיונות ובניית פתרונות עם השפעה אמיתית.'
+      },
+      {
+        label : 'מנטור',
+        name : 'איתי דנה',
+        img : '/images/itay.jpeg',
+        desc : 'יזם ואיש פיתוח עסקי עם ניסיון של מעל 20 שנה.',
+        sub : 'מתמחה בהובלת חדשנות והפיכת רעיונות למוצרים.'
+      },
+      {
+        label : 'מנטור',
+        name : 'עדן חסון',
+        img : '/images/eden.jpeg',
+        desc : 'מהנדס תוכנה עם רקע בדאטה ופיתוח מערכות.',
+        sub : 'משלב חשיבה אנליטית עם פיתוח פתרונות טכנולוגיים.'
+      },
+      {
+        label : 'מנטור',
+        name : 'עדן שחמון',
+        img : '/images/edan.jpeg',
+        desc : 'חוקר דאטה סיינס המתמחה ב-Machine Learning.',
+        sub : 'מוביל פתרונות מקצה לקצה מבוססי דאטה.'
+      }
+    ].map((p, i) => (
+
+      <div key={i} className="mb-12">
+        <div
+          className="overflow-hidden rounded-[32px] bg-white"
+          style={{
+            border : `2px solid ${ISEF_BLUE}`,
+            boxShadow : `8px 8px 0 ${ISEF_ORANGE}`
+          }}
+        >
+          <div className="flex flex-col md:flex-row-reverse">
+
+            {/* IMAGE */}
+            <div className="w-full md:w-[280px] h-[260px] md:h-auto">
+              <img src={p.img} className="w-full h-full object-cover object-top" />
             </div>
 
-            <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
-              שיר אלקיים לוצאטו
-            </h3>
+            {/* TEXT */}
+            <div className="flex-1 p-8 text-right flex flex-col justify-center">
 
-            <p className="mb-4 text-gray-700">
-              דוקטורנטית לכלכלה וניהול באוניברסיטת בן גוריון, חברת סגל MBA במרכז האקדמי פרס ומנכ״לית Impact360.
-            </p>
+              <div
+                className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
+                style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
+              >
+                {p.label}
+              </div>
 
-            <p className="text-gray-600">
-              תוביל את היום כולו - מהפתיחה ועד ליווי המשתתפים לפתרונות אמיתיים.
-            </p>
-          </div>
+              <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+                {p.name}
+              </h3>
 
-          <img src="/images/shir.jpeg" className="h-full w-full object-cover" />
-        </div>
-      </div>
-    </div>
+              <p className="mb-3 text-gray-700">
+                {p.desc}
+              </p>
 
-    {/* ===== הרצאות אורח ===== */}
-    <h3 className="mb-6 text-2xl font-black text-right" style={{ color : ISEF_BLUE }}>
-      הרצאות אורח
-    </h3>
+              <p className="text-gray-600">
+                {p.sub}
+              </p>
 
-    <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
-        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
-
-          <img src="/images/haim.jpeg" className="h-full w-full object-cover" />
-
-          <div className="p-8 text-right">
-            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
-              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-              הרצאת אורח
             </div>
-
-            <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
-              פרופ׳ חיים סוכובסקי
-            </h3>
-
-            <p className="mb-4 text-gray-700">
-              פיזיקאי וחוקר בתחום הננופוטוניקה והאופטיקה המתקדמת.
-            </p>
-
-            <p className="text-gray-600">
-              הרצאת אורח: Deep Tech - איך באמת משנים את העולם.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* ===== מנטורים ===== */}
-    <h3 className="mb-6 text-2xl font-black text-right" style={{ color : ISEF_BLUE }}>
-      מנטורים
-    </h3>
-
-    <div className="mb-12">
-      <div className="overflow-hidden rounded-[32px] bg-white"
-        style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
-
-          <img src="/images/inna.jpg" className="h-full w-full object-cover" />
-
-          <div className="p-8 text-right">
-            <div className="mb-3 inline-flex rounded-full px-4 py-2 text-sm font-black"
-              style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-              מנטורית
-            </div>
-
-            <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
-              אינה ברנפלד גייזמן
-            </h3>
-
-            <p className="mb-4 text-gray-700">
-              מובילה תהליכי טרנספורמציה דיגיטלית ושותפויות בענן בארגונים גדולים.
-            </p>
-
-            <p className="text-gray-600">
-              תלווה צוותים בפיתוח רעיונות ובניית פתרונות עם השפעה אמיתית.
-            </p>
           </div>
         </div>
       </div>
-    </div>
-    <div className="mb-12">
-  <div className="overflow-hidden rounded-[32px] bg-white"
-    style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-  >
-    <div className="flex flex-col md:flex-row-reverse">
 
-      <div className="w-full md:w-[280px] h-[260px] md:h-auto">
-        <img src="/images/itay.jpeg" className="w-full h-full object-cover object-top" />
-      </div>
-
-      <div className="flex-1 p-8 text-right flex flex-col justify-center">
-        <div className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
-          style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-          מנטור
-        </div>
-
-        <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
-          איתי דנה
-        </h3>
-
-        <p className="mb-4 text-gray-700">
-          יזם ואיש פיתוח עסקי עם ניסיון של מעל 20 שנה בפודטק, ביוטכנולוגיה ושווקים גלובליים.
-        </p>
-
-        <p className="text-gray-600">
-          מתמחה בהובלת חדשנות, בניית שותפויות והפיכת רעיונות למוצרים אמיתיים בשוק.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-    <div className="mb-12">
-  <div className="overflow-hidden rounded-[32px] bg-white"
-    style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-  >
-    <div className="flex flex-col md:flex-row-reverse">
-
-      <div className="w-full md:w-[280px] h-[260px] md:h-auto">
-        <img src="/images/eden.jpeg" className="w-full h-full object-cover object-top" />
-      </div>
-
-      <div className="flex-1 p-8 text-right flex flex-col justify-center">
-        <div className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
-          style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-          מנטור
-        </div>
-
-        <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
-          עדן חסון
-        </h3>
-
-        <p className="mb-4 text-gray-700">
-          מהנדס תוכנה עם רקע חזק בדאטה אנליזה ופיתוח מערכות מורכבות.
-        </p>
-
-        <p className="text-gray-600">
-          משלב חשיבה אנליטית עם יכולות פיתוח לבניית פתרונות מדויקים ומבוססי דאטה.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-    <div className="mb-12">
-  <div className="overflow-hidden rounded-[32px] bg-white"
-    style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
-  >
-    <div className="flex flex-col md:flex-row-reverse">
-
-      <div className="w-full md:w-[280px] h-[260px] md:h-auto">
-        <img src="/images/edan.jpeg" className="w-full h-full object-cover object-top" />
-      </div>
-
-      <div className="flex-1 p-8 text-right flex flex-col justify-center">
-        <div className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
-          style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-          מנטור
-        </div>
-
-        <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
-          עדן שחמון
-        </h3>
-
-        <p className="mb-4 text-gray-700">
-          חוקר דאטה סיינס המתמחה בפיתוח מודלי Machine Learning מתקדמים.
-        </p>
-
-        <p className="text-gray-600">
-          מוביל תהליכים מקצה לקצה - מהגדרת בעיה ועד פיתוח והטמעה של פתרונות מבוססי דאטה.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
+    ))}
 
   </div>
 </section>
