@@ -350,21 +350,21 @@ export default function App() {
       {
         label : 'מנטור',
         name : 'איתי דנה',
-        img : '/images/itay.jpeg',
+        img : '/images/itay.jpg',
         desc : 'יזם ואיש פיתוח עסקי עם ניסיון של מעל 20 שנה.',
         sub : 'מתמחה בהובלת חדשנות והפיכת רעיונות למוצרים.'
       },
       {
         label : 'מנטור',
         name : 'עדן חסון',
-        img : '/images/eden.jpeg',
+        img : '/images/eden.jpg',
         desc : 'מהנדס תוכנה עם רקע בדאטה ופיתוח מערכות.',
         sub : 'משלב חשיבה אנליטית עם פיתוח פתרונות טכנולוגיים.'
       },
       {
         label : 'מנטור',
         name : 'עדן שחמון',
-        img : '/images/edan.jpeg',
+        img : '/images/edan.jpg',
         desc : 'חוקר דאטה סיינס המתמחה ב-Machine Learning.',
         sub : 'מוביל פתרונות מקצה לקצה מבוססי דאטה.'
       }
