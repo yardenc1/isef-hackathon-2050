@@ -363,7 +363,7 @@ export default function App() {
       },
       {
         label : 'מנטור',
-        name : 'עדן שחמון',
+        name : 'עידן שחמון',
         img : '/images/edan.jpg',
         desc : 'חוקר דאטה סיינס המתמחה ב-Machine Learning.',
         sub : 'מוביל פתרונות מקצה לקצה מבוססי דאטה.'
