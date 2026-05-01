@@ -77,9 +77,36 @@ const challenges = [
 ];
 
 const timeline = [
-  { date : '29.3', title : 'פתיחת הרשמה', desc : 'פתיחת טופס ההרשמה לקהילת אייסף.' },
-  { date : '10.5', title : 'סגירת הרשמה', desc : 'המועד האחרון לשליחת הטופס בחצות.' },
-  { date : '28.5', title : 'אירוע האקתון מרכזי', desc : 'יום האקתון מלא של בנייה, מנטורים, דמו והצגה.' },
+  {
+    date : '29.3',
+    title : 'פתיחת הרשמה',
+    desc : 'פתיחת ההרשמה להאקתון לקהילת אייסף.'
+  },
+  {
+    date : '10.5',
+    title : 'סגירת הרשמה',
+    desc : 'המועד האחרון להגשת מועמדות.'
+  },
+  {
+    date : '28.5 | 16:00',
+    title : 'אירוע מקדים',
+    desc : 'מפגש פתיחה, היכרות, השראה והתחלת תהליך החשיבה.'
+  },
+  {
+    date : '24.6 | 20:30',
+    title : 'וובינר העשרה #1',
+    desc : 'סשן תוכן מעשי לפיתוח רעיונות וחשיבה יזמית.'
+  },
+  {
+    date : '20.7 | 20:30',
+    title : 'וובינר העשרה #2',
+    desc : 'כלים מתקדמים לבניית מיזם והכנה להאקתון.'
+  },
+  {
+    date : '10.9',
+    title : 'האירוע המרכזי',
+    desc : 'יום האקתון מלא - צוותים, מנטורים, בנייה והצגת פתרונות.'
+  },
 ];
 
 const dayFlow = [
@@ -394,6 +421,102 @@ export default function App() {
         </div>
       </div>
     </div>
+    <div className="mb-12">
+  <div className="overflow-hidden rounded-[32px] bg-white"
+    style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+  >
+    <div className="flex flex-col md:flex-row-reverse">
+
+      <div className="w-full md:w-[280px] h-[260px] md:h-auto">
+        <img src="/images/itay.jpeg" className="w-full h-full object-cover object-top" />
+      </div>
+
+      <div className="flex-1 p-8 text-right flex flex-col justify-center">
+        <div className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
+          style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+          מנטור
+        </div>
+
+        <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+          איתי דנה
+        </h3>
+
+        <p className="mb-4 text-gray-700">
+          יזם ואיש פיתוח עסקי עם ניסיון של מעל 20 שנה בפודטק, ביוטכנולוגיה ושווקים גלובליים.
+        </p>
+
+        <p className="text-gray-600">
+          מתמחה בהובלת חדשנות, בניית שותפויות והפיכת רעיונות למוצרים אמיתיים בשוק.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <div className="mb-12">
+  <div className="overflow-hidden rounded-[32px] bg-white"
+    style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+  >
+    <div className="flex flex-col md:flex-row-reverse">
+
+      <div className="w-full md:w-[280px] h-[260px] md:h-auto">
+        <img src="/images/eden.jpeg" className="w-full h-full object-cover object-top" />
+      </div>
+
+      <div className="flex-1 p-8 text-right flex flex-col justify-center">
+        <div className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
+          style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+          מנטור
+        </div>
+
+        <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+          עדן חסון
+        </h3>
+
+        <p className="mb-4 text-gray-700">
+          מהנדס תוכנה עם רקע חזק בדאטה אנליזה ופיתוח מערכות מורכבות.
+        </p>
+
+        <p className="text-gray-600">
+          משלב חשיבה אנליטית עם יכולות פיתוח לבניית פתרונות מדויקים ומבוססי דאטה.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <div className="mb-12">
+  <div className="overflow-hidden rounded-[32px] bg-white"
+    style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `8px 8px 0 ${ISEF_ORANGE}` }}
+  >
+    <div className="flex flex-col md:flex-row-reverse">
+
+      <div className="w-full md:w-[280px] h-[260px] md:h-auto">
+        <img src="/images/edan.jpeg" className="w-full h-full object-cover object-top" />
+      </div>
+
+      <div className="flex-1 p-8 text-right flex flex-col justify-center">
+        <div className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
+          style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+          מנטור
+        </div>
+
+        <h3 className="mb-3 text-3xl font-black" style={{ color : ISEF_BLUE }}>
+          עדן שחמון
+        </h3>
+
+        <p className="mb-4 text-gray-700">
+          חוקר דאטה סיינס המתמחה בפיתוח מודלי Machine Learning מתקדמים.
+        </p>
+
+        <p className="text-gray-600">
+          מוביל תהליכים מקצה לקצה - מהגדרת בעיה ועד פיתוח והטמעה של פתרונות מבוססי דאטה.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
 
   </div>
 </section>
