@@ -10,7 +10,7 @@ import {
   ChevronDown,
   Users,
   HelpCircle,
-  Trophy,כ28.
+  Trophy,
   CalendarDays,
   Wrench,
   MapPin,
