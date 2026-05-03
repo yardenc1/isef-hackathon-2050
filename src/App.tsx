@@ -10,7 +10,7 @@ import {
   ChevronDown,
   Users,
   HelpCircle,
-  Trophy,
+  Trophy,כ28.
   CalendarDays,
   Wrench,
   MapPin,
@@ -281,7 +281,7 @@ export default function App() {
               <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
                 <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
                   <div className="text-lg font-bold text-blue-100 md:text-xl">אירוע ההאקתון המרכזי</div>
-                  <div className="text-3xl font-black">28.5 | 09:00-21:00</div>
+                  <div className="text-3xl font-black">10.9 | 09:00-21:00</div>
 
                   <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
                     <MapPin className="h-5 w-5" />
