@@ -16,6 +16,7 @@ import {
   MapPin,
   UserPlus,
   Presentation,
+  Clock3,
   Mic,
   Sparkles,
 } from 'lucide-react';
@@ -80,17 +81,17 @@ const timeline = [
   {
     date : '29.3',
     title : 'פתיחת הרשמה',
-    desc : 'פתיחת ההרשמה להאקתון לקהילת אייסף.'
+    desc : 'פתיחת ההרשמה למפגש ההזנק ולקראת תהליך ההאקתון לקהילת אייסף.'
   },
   {
-    date : '10.5',
-    title : 'סגירת הרשמה',
-    desc : 'המועד האחרון להגשת מועמדות.'
+    date : '15.5',
+    title : 'סגירת הרשמה למפגש ההזנק',
+    desc : 'המועד האחרון להצטרפות למפגש המקדים.'
   },
   {
-    date : '28.5 | 16:00',
-    title : 'אירוע מקדים',
-    desc : 'מפגש פתיחה, היכרות, השראה והתחלת תהליך החשיבה.'
+    date : '28.5',
+    title : 'מפגש הזנק',
+    desc : 'מפגש מקדים של היכרות, חלוקה לקבוצות ותחילת חשיבה על כיוונים ורעיונות.'
   },
   {
     date : '24.6 | 20:30',
@@ -104,8 +105,8 @@ const timeline = [
   },
   {
     date : '10.9',
-    title : 'האירוע המרכזי',
-    desc : 'יום האקתון מלא - צוותים, מנטורים, בנייה והצגת פתרונות.'
+    title : 'אירוע ההאקתון המרכזי',
+    desc : 'יום האקתון מלא עם צוותים, מנטורים, בנייה והצגת פתרונות.'
   },
 ];
 
@@ -219,8 +220,8 @@ export default function App() {
             >
               תמיד חלמת להיות יזם?
             </div>
-          
-            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה ל-ISEF 2050 נסגרת ב-15.5 בחצות</div>
+
+            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה למפגש ההזנק נסגרת ב-15.5 בחצות</div>
             <div className="text-sm font-bold md:text-base" style={{ color : ISEF_ORANGE }}>מפגש הזנק | 28.5</div>
           </div>
 
@@ -261,21 +262,21 @@ export default function App() {
           <div className="mx-auto max-w-5xl text-center">
             <motion.div initial={{ opacity : 0, y : 24 }} animate={{ opacity : 1, y : 0 }} transition={{ duration : 0.8 }}>
               <span className="mb-4 mt-10 inline-block rounded-full px-5 py-2 text-sm font-black uppercase tracking-[0.25em] md:mt-0 md:text-base" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-                ISEF 2050 HACKATHON
+                ISEF 2050
               </span>
 
               <h1 className="mb-5 text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-8xl">
-                הופכים רעיונות
+                מפגש ההזנק
                 <br />
-                לפתרונות אמיתיים
+                של ISEF 2050
               </h1>
 
               <p className="mx-auto mb-4 max-w-3xl text-2xl font-semibold leading-relaxed text-blue-50 sm:text-3xl md:text-4xl">
-                האקתון יומי לקהילת אייסף - מגיעים עם רצון לשנות ויוצאים עם רעיון מגובש.
+                מפגש מקדים של היכרות, חלוקה לקבוצות ותחילת חשיבה על עולם היזמות.
               </p>
 
               <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
-                צריך רק רצון לנסות
+                מגיעים רק עם רצון וחשיבה יזמית
               </p>
 
               <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
@@ -284,20 +285,13 @@ export default function App() {
                   <div className="text-3xl font-black">28.5</div>
 
                   <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
-                    <MapPin className="h-5 w-5" />
-                    <span>מרכז הארץ - מיקום מדויק יימסר בהמשך</span>
+                    <Clock3 className="h-5 w-5" />
+                    <span>היכרות, חלוקה לקבוצות ותחילת חשיבה יזמית</span>
                   </div>
 
-                  <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
-                    <Clock3 className="h-5 w-5" />
-                    <span>היכרות, חלוקה לקבוצות ותחילת החשיבה היזמית</span>
-                  </div>
-                
                   <div className="mt-4 border-t border-white/15 pt-4 text-center">
                     <div className="text-base font-bold text-blue-100 md:text-lg">מה צריך להביא?</div>
-                    <div className="mt-1 text-xl font-black md:text-2xl" style={{ color : ISEF_ORANGE }}>
-                      רק רצון וחשיבה על עולם היזמות
-                    </div>
+                    <div className="mt-1 text-xl font-black md:text-2xl" style={{ color : ISEF_ORANGE }}>רק רצון וחשיבה על עולם היזמות</div>
                   </div>
                 </div>
 
@@ -324,10 +318,10 @@ export default function App() {
     {/* HEADER */}
     <div className="mb-16 text-center">
       <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
-        מי מחכה לכם ביום ההאקתון
+        מי יפגוש אתכם במפגש ההזנק
       </h2>
       <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
-        יום מלא בהשראה, יזמות, חיבורים ולמידה מאנשים שילוו את המשתתפים לאורך הדרך.
+        האנשים שילוו אתכם, יעזרו לכם להיפתח לעולם היזמות ויתנו השראה כבר מהמפגש המקדים.
       </p>
     </div>
 
@@ -338,42 +332,42 @@ export default function App() {
         name : 'שיר אלקיים לוצאטו',
         img : '/images/shir.jpeg',
         desc : 'דוקטורנטית לכלכלה וניהול, חברת סגל MBA ומנכ״לית Impact360.',
-        sub : 'תוביל את היום כולו - מהפתיחה ועד ליווי המשתתפים.'
+        sub : 'תפגוש את המשתתפים במפגש ההזנק ותסייע ביצירת חיבורים והשראה.'
       },
       {
         label : 'הרצאת אורח',
         name : 'פרופ׳ חיים סוכובסקי',
         img : '/images/haim.jpeg',
         desc : 'פיזיקאי וחוקר בתחום הננופוטוניקה והאופטיקה המתקדמת.',
-        sub : 'הרצאת אורח: Deep Tech - איך באמת משנים את העולם.'
+        sub : 'יפגוש את המשתתפים במפגש ההזנק ויפתח כיווני חשיבה סביב חדשנות ויזמות.'
       },
       {
         label : 'מנטורית',
         name : 'אינה ברנפלד גייזמן',
         img : '/images/inna.jpg',
         desc : 'מובילה תהליכי טרנספורמציה דיגיטלית ושותפויות בענן.',
-        sub : 'תלווה צוותים בפיתוח רעיונות ובניית פתרונות עם השפעה אמיתית.'
+        sub : 'תגיע למפגש ההזנק כדי להכיר, ללוות ולפתוח כיווני חשיבה.'
       },
       {
         label : 'מנטור',
         name : 'איתי דנה',
         img : '/images/itay.jpg',
         desc : 'יזם ואיש פיתוח עסקי עם ניסיון של מעל 20 שנה.',
-        sub : 'מתמחה בהובלת חדשנות והפיכת רעיונות למוצרים.'
+        sub : 'יגיע למפגש ההזנק כדי להכיר, ללוות ולפתוח כיווני חשיבה.'
       },
       {
         label : 'מנטור',
         name : 'עדן חסון',
         img : '/images/eden.jpg',
         desc : 'מהנדס תוכנה עם רקע בדאטה ופיתוח מערכות. עובד כמפתח סוכני AI ב-Wonderful.',
-        sub : 'משלב חשיבה אנליטית עם פיתוח פתרונות טכנולוגיים.'
+        sub : 'יגיע למפגש ההזנק כדי להכיר, ללוות ולפתוח כיווני חשיבה.'
       },
       {
         label : 'מנטור',
         name : 'עידן שחמון',
         img : '/images/edan.jpg',
         desc : 'חוקר דאטה סיינס המתמחה ב-Machine Learning.',
-        sub : 'מוביל פתרונות מקצה לקצה מבוססי דאטה.'
+        sub : 'יגיע למפגש ההזנק כדי להכיר, ללוות ולפתוח כיווני חשיבה.'
       }
     ].map((p, i) => (
 
@@ -431,7 +425,7 @@ export default function App() {
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-5xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
+            <h2 className="text-5xl font-black text-white md:text-6xl">הדרך ממפגש ההזנק להאקתון</h2>
           </div>
 
           <div ref={timelineRef} className="relative mx-auto max-w-5xl">
@@ -478,7 +472,7 @@ export default function App() {
           <div className="mb-10 text-center">
             <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>אתגרי הליבה</h2>
             <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
-              אתגרי הליבה שתוכלו לבחור ביום האירוע - 
+              אתגרי הליבה שילוו את תהליך החשיבה והפיתוח -
             </p>
           </div>
 
@@ -533,7 +527,7 @@ export default function App() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מה צפוי ביום ההאקתון</h2>
+          <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מה צפוי בהאקתון המרכזי</h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {dayFlow.map((item) => (
@@ -554,8 +548,8 @@ export default function App() {
       <section id="register" className="py-16 md:py-20" style={{ backgroundColor : '#FFF8F0' }}>
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
-            <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים לבנות את העתיד?</h2>
-            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו ליום שלם של חדשנות, יצירה, השראה והזדמנות לבנות מיזם עם אימפקט אמיתי.</p>
+            <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים להגיע למפגש ההזנק?</h2>
+            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו למפגש המקדים שבו מתחילים להכיר, להתחבר ולחשוב יזמות יחד.</p>
           </div>
 
           <div className="mx-auto mb-6 max-w-4xl rounded-[28px] border bg-white p-5 text-center md:p-6" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
