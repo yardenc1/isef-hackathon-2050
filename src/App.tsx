@@ -13,12 +13,9 @@ import {
   Trophy,
   CalendarDays,
   Wrench,
-  MapPin,
   UserPlus,
   Presentation,
   Clock3,
-  Mic,
-  Sparkles,
 } from 'lucide-react';
 import { RegistrationForm } from './components/RegistrationForm';
 
@@ -117,12 +114,6 @@ const dayFlow = [
   { title : 'סדנאות פרקטיות', desc : 'סדנאות יישומיות שיעזרו לכם לדייק את הרעיון, לבנות מיזם ולהציג אותו בצורה משכנעת.', icon : Presentation },
   { title : 'ליווי של מנטורים', desc : 'מנטורים יעזרו לחדד את הערך, הכיוון, המוצר והפיץ׳.', icon : Wrench },
   { title : 'הצגה ופרסים', desc : 'בסוף היום הצוותים יציגו את הפתרון שלהם, והצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.', icon : Trophy },
-];
-
-const infoCards = [
-  { title : 'מה זה האקתון ISEF 2050?', desc : 'האקתון יומי לקהילת אייסף שמחבר בין אנשים, רעיונות ואתגרים משמעותיים. המטרה היא לבנות פתרונות אמיתיים סביב האתגרים שנציג, בליווי מנטורים ובאווירה של עשייה.' },
-  { title : 'מי יכולות ויכולים להשתתף?', desc : 'אפשר להגיע כיחידים או כצוות מגובש. תינתן אפשרות בתחילת ההאתקון להצטוות לצוות קיים או להקים צוות חדש. גם צוות קיים יכול להשתתף, כל עוד לפחות אחת או אחד מחברי הצוות שייכים לקהילת אייסף.' },
-  { title : 'מה מחכה לכם ביום עצמו?', desc : 'יום שלם של השראה, עבודה בצוותים, סדנאות פרקטיות, ליווי של מנטורים, הרצאת אורח והצגת הפתרונות על הבמה.' },
 ];
 
 const faqs = [
@@ -315,7 +306,6 @@ export default function App() {
 <section className="bg-white py-16 md:py-20">
   <div className="container mx-auto px-4">
 
-    {/* HEADER */}
     <div className="mb-16 text-center">
       <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
         מי יפגוש אתכם במפגש ההזנק
@@ -325,7 +315,6 @@ export default function App() {
       </p>
     </div>
 
-    {/* ===== CARD TEMPLATE ===== */}
     {[
       {
         label : 'מובילת האירוע',
@@ -334,11 +323,11 @@ export default function App() {
         desc : 'מנהלת קהילה ופיתוח עסקי בקרן אייסף. מובילה שיתופי פעולה ותהליכים מורכבים בקנה מידה רחב, עם ניסיון בבניית מערכות וחיבורים בין ארגונים ואנשים.',
         sub : 'מביאה שילוב של חשיבה אסטרטגית ויכולת ביצוע שמתרגמת חזון ליוזמות עם אימפקט אמיתי.'
       },
-        {
+      {
         label : 'מוביל האירוע',
         name : 'ירדן כהן',
         img : '/images/yarden.jpg',
-        desc : 'DS באינטל וחוקר דאטה באוניברסיטת תל אביב.מפתח מודלים מתקדמים לקבלת החלטות בעולם האמיתי, תוך עבודה עם דאטה מורכב ולא מושלם.',
+        desc : 'DS באינטל וחוקר דאטה באוניברסיטת תל אביב. מפתח מודלים מתקדמים לקבלת החלטות בעולם האמיתי, תוך עבודה עם דאטה מורכב ולא מושלם.',
         sub : 'משלב עומק מחקרי עם חשיבה פרקטית כדי להפוך נתונים לפתרונות שעובדים בשטח.'
       },
       {
@@ -359,7 +348,7 @@ export default function App() {
         label : 'מנטור',
         name : 'עדן חסון',
         img : '/images/eden.jpg',
-        desc : 'מהנדס תוכנה, עובד כמפתח סוכני AI בחברת הסטארט אפ הישראלית Wonderful.מגיע מרקע חזק בפיתוח מערכות, דאטה וניתוח מידע בסביבות מורכבות.',
+        desc : 'מהנדס תוכנה, עובד כמפתח סוכני AI בחברת הסטארט-אפ הישראלית Wonderful. מגיע מרקע חזק בפיתוח מערכות, דאטה וניתוח מידע בסביבות מורכבות.',
         sub : 'משלב יכולות פיתוח וחשיבה אנליטית כדי לבנות פתרונות חכמים ומבוססי נתונים.'
       },
       {
@@ -381,12 +370,10 @@ export default function App() {
         >
           <div className="flex flex-col md:flex-row-reverse">
 
-            {/* IMAGE */}
             <div className="w-full md:w-[280px] h-[260px] md:h-auto">
               <img src={p.img} className="w-full h-full object-cover object-top" />
             </div>
 
-            {/* TEXT */}
             <div className="flex-1 p-8 text-right flex flex-col justify-center">
 
               <div
