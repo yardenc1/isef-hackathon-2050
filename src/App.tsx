@@ -335,13 +335,6 @@ export default function App() {
         sub : 'תפגוש את המשתתפים במפגש ההזנק ותסייע ביצירת חיבורים והשראה.'
       },
       {
-        label : 'הרצאת אורח',
-        name : 'פרופ׳ חיים סוכובסקי',
-        img : '/images/haim.jpeg',
-        desc : 'פיזיקאי וחוקר בתחום הננופוטוניקה והאופטיקה המתקדמת.',
-        sub : 'יפגוש את המשתתפים במפגש ההזנק ויפתח כיווני חשיבה סביב חדשנות ויזמות.'
-      },
-      {
         label : 'מנטורית',
         name : 'אינה ברנפלד גייזמן',
         img : '/images/inna.jpg',
@@ -425,7 +418,7 @@ export default function App() {
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-5xl font-black text-white md:text-6xl">הדרך ממפגש ההזנק להאקתון</h2>
+            <h2 className="text-5xl font-black text-white md:text-6xl">הדרך להאקתון</h2>
           </div>
 
           <div ref={timelineRef} className="relative mx-auto max-w-5xl">
