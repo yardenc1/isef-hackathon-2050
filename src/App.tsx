@@ -8,13 +8,7 @@ import {
   Leaf,
   Zap,
   ChevronDown,
-  Users,
   HelpCircle,
-  Trophy,
-  CalendarDays,
-  Wrench,
-  UserPlus,
-  Presentation,
   Clock3,
 } from 'lucide-react';
 import { RegistrationForm } from './components/RegistrationForm';
@@ -81,14 +75,14 @@ const timeline = [
     desc : 'פתיחת ההרשמה למפגש ההזנק ולקראת תהליך ההאקתון לקהילת אייסף.'
   },
   {
-    date : '15.5',
+    date : '18.5',
     title : 'סגירת הרשמה למפגש ההזנק',
     desc : 'המועד האחרון להצטרפות למפגש המקדים.'
   },
   {
-    date : '28.5',
+    date : '28.5 | 16:00-20:00',
     title : 'מפגש הזנק',
-    desc : 'מפגש מקדים של היכרות, חלוקה לקבוצות ותחילת חשיבה על כיוונים ורעיונות.'
+    desc : 'מפגש מקדים בתל אביב של היכרות, חלוקה לקבוצות ותחילת חשיבה על כיוונים ורעיונות.'
   },
   {
     date : '24.6 | 20:30',
@@ -101,26 +95,20 @@ const timeline = [
     desc : 'כלים מתקדמים לבניית מיזם והכנה להאקתון.'
   },
   {
-    date : '10.9',
+    date : '3.9 | 09:00-21:00',
     title : 'אירוע ההאקתון המרכזי',
-    desc : 'יום האקתון מלא עם צוותים, מנטורים, בנייה והצגת פתרונות.'
+    desc : 'יום האקתון מלא בתל אביב עם צוותים, מנטורים, בנייה והצגת פתרונות.'
   },
 ];
 
-const dayFlow = [
-  { title : 'פתיחה והיכרות', desc : 'התכנסות, פתיחה חגיגית, היכרות עם הקהל והאווירה של היום.', icon : CalendarDays },
-  { title : 'חלוקה לצוותים', desc : 'הצטוותו עם משתתפים נוספים או הקימו צוות חדש סביב רעיון משותף.', icon : UserPlus },
-  { title : 'עבודה בצוותים', desc : 'צוותים בונים פתרונות לאתגרים שהוגדרו, עם זמן לחשיבה, בנייה ודיוק הרעיון.', icon : Users },
-  { title : 'סדנאות פרקטיות', desc : 'סדנאות יישומיות שיעזרו לכם לדייק את הרעיון, לבנות מיזם ולהציג אותו בצורה משכנעת.', icon : Presentation },
-  { title : 'ליווי של מנטורים', desc : 'מנטורים יעזרו לחדד את הערך, הכיוון, המוצר והפיץ׳.', icon : Wrench },
-  { title : 'הצגה ופרסים', desc : 'בסוף היום הצוותים יציגו את הפתרון שלהם, והצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.', icon : Trophy },
-];
-
 const faqs = [
+  { question : 'מה יקרה במפגש ההזנק?', answer : 'מפגש ההזנק הוא המפגש המקדים לתהליך. נכיר את המשתתפים, נציג את האתגרים, נחלק לקבוצות ונפתח את החשיבה היזמית לקראת ההמשך.' },
+  { question : 'האם זה עולה כסף?', answer : 'לא. ההשתתפות במפגש ההזנק ובהאקתון אינה כרוכה בתשלום.' },
+  { question : 'האם אפשר להגיע עם חבר/ה שהם לא באייסף?', answer : 'כן. אפשר להגיע עם חבר/ה או צוות קיים, כל עוד לפחות אחת או אחד מחברי הצוות שייכים לקהילת אייסף.' },
   { question : 'אפשר להגיע עם צוות קיים?', answer : 'כן. אפשר להגיע עם צוות מגובש, ובטופס כדאי לציין את שמות חברי הצוות ואת הפרטים הרלוונטיים עליהם.' },
-  { question : 'מי יכול להשתתף?', answer : 'אפשר להשתתף גם כיחידים וגם כצוות. תינתן אפשרות בתחילת ההאתקון להצטוות לצוות קיים או להקים צוות חדש. בצוות קיים מספיק שלפחות אחת או אחד מחברי הצוות יהיו מקהילת אייסף.' },
-  { question : 'צריך רעיון מוכן מראש?', answer : 'לא. אפשר להגיע גם בלי רעיון מלא. במהלך האירוע יהיו אתגרים מוגדרים, מנטורים וליווי שיסייעו לחדד כיוון ולבנות פתרון.' },
-  { question : 'יש פרס?', answer : 'כן. הצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.' },
+  { question : 'מי יכול להשתתף?', answer : 'אפשר להשתתף גם כיחידים וגם כצוות. תינתן אפשרות בתחילת ההאקתון להצטוות לצוות קיים או להקים צוות חדש. בצוות קיים מספיק שלפחות אחת או אחד מחברי הצוות יהיו מקהילת אייסף.' },
+  { question : 'צריך רעיון מוכן מראש?', answer : 'לא. אפשר להגיע גם בלי רעיון מלא. במהלך התהליך יהיו אתגרים מוגדרים, מנטורים וליווי שיסייעו לחדד כיוון ולבנות פתרון.' },
+  { question : 'יש פרס?', answer : 'כן. באירוע המרכזי הצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.' },
 ];
 
 function useCountdown(targetDate : Date) {
@@ -174,7 +162,7 @@ function ImageCarousel({ images, interval = 4500, className = '' } : { images : 
 }
 
 export default function App() {
-  const countdownTarget = useMemo(() => new Date('2026-05-15T23:59:59'), []);
+  const countdownTarget = useMemo(() => new Date('2026-05-18T23:59:59'), []);
   const timeLeft = useCountdown(countdownTarget);
   const [timelineProgress, setTimelineProgress] = useState(0);
   const [openChallengeId, setOpenChallengeId] = useState<number | null>(null);
@@ -209,10 +197,10 @@ export default function App() {
               className="mb-2 inline-flex items-center rounded-full px-4 py-1 text-base font-black md:text-lg"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
             >
-              תמיד חלמת להיות יזם?
+              האקתון היזמות של אייסף יוצא לדרך!
             </div>
 
-            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה למפגש ההזנק נסגרת ב-15.5 בחצות</div>
+            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה למפגש ההזנק נסגרת ב-18.5 בחצות</div>
             <div className="text-sm font-bold md:text-base" style={{ color : ISEF_ORANGE }}>מפגש הזנק | 28.5</div>
           </div>
 
@@ -273,12 +261,14 @@ export default function App() {
               <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
                 <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
                   <div className="text-lg font-bold text-blue-100 md:text-xl">מפגש הזנק</div>
-                  <div className="text-3xl font-black">28.5</div>
+                  <div className="text-3xl font-black">28.5 | 16:00-20:00</div>
 
                   <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
                     <Clock3 className="h-5 w-5" />
                     <span>היכרות, חלוקה לקבוצות ותחילת חשיבה יזמית</span>
                   </div>
+
+                  <div className="mt-2 text-base font-bold text-blue-50 md:text-lg">תל אביב</div>
 
                   <div className="mt-4 border-t border-white/15 pt-4 text-center">
                     <div className="text-base font-bold text-blue-100 md:text-lg">מה צריך להביא?</div>
@@ -348,7 +338,7 @@ export default function App() {
         label : 'מנטור',
         name : 'עדן חסון',
         img : '/images/eden.jpg',
-        desc : 'מהנדס תוכנה, עובד כמפתח סוכני AI בחברת הסטארט-אפ הישראלית Wonderful. מגיע מרקע חזק בפיתוח מערכות, דאטה וניתוח מידע בסביבות מורכבות.',
+        desc : 'מהנדס תוכנה, עובד כמפתח סוכני AI בחברת הסטארט אפ הישראלית Wonderful. מגיע מרקע חזק בפיתוח מערכות, דאטה וניתוח מידע בסביבות מורכבות.',
         sub : 'משלב יכולות פיתוח וחשיבה אנליטית כדי לבנות פתרונות חכמים ומבוססי נתונים.'
       },
       {
@@ -512,31 +502,11 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מה צפוי בהאקתון המרכזי</h2>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {dayFlow.map((item) => (
-              <div key={item.title} className="rounded-[28px] bg-zinc-50 p-6 md:p-7" style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}>
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ backgroundColor : ISEF_BLUE, color : 'white' }}>
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-2xl font-black" style={{ color : ISEF_BLUE }}>{item.title}</h3>
-                </div>
-                <p className="text-lg leading-relaxed text-zinc-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="register" className="py-16 md:py-20" style={{ backgroundColor : '#FFF8F0' }}>
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
             <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים להגיע למפגש ההזנק?</h2>
-            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו למפגש המקדים שבו מתחילים להכיר, להתחבר ולחשוב יזמות יחד.</p>
+            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו למפגש המקדים בתל אביב שבו מתחילים להכיר, להתחבר ולחשוב יזמות יחד.</p>
           </div>
 
           <div className="mx-auto mb-6 max-w-4xl rounded-[28px] border bg-white p-5 text-center md:p-6" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
