@@ -197,7 +197,7 @@ export default function App() {
               className="mb-2 inline-flex items-center rounded-full px-4 py-1 text-base font-black md:text-lg"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
             >
-              האקתון היזמות של אייסף יוצא לדרך!
+              האב היזמות של אייסף יוצא לדרך!
             </div>
 
             <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה למפגש ההזנק נסגרת ב-18.5 בחצות</div>
