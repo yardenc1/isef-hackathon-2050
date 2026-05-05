@@ -28,7 +28,7 @@ export function RegistrationForm() {
           הפרטים שלך התקבלו בהצלחה.
         </p>
         <p style={{ color : '#166534', lineHeight : 1.6 }}>
-          ניצור קשר בהמשך עם כל הפרטים הרלוונטיים לקראת האירוע.
+          ניצור קשר בהמשך עם כל הפרטים הרלוונטיים לקראת מפגש ההזנק.
         </p>
       </div>
     );
@@ -47,8 +47,8 @@ export function RegistrationForm() {
       status : String(formData.get('status') || ''),
       institution : String(formData.get('institution') || ''),
       city : '',
-      challenges : String(formData.get('challenge') || ''),
-      role : String(formData.get('background') || ''),
+      challenges : '',
+      role : '',
       hasIdea : 'לא',
       ideaDescription : '',
       wantsToLead : '',
@@ -61,9 +61,9 @@ export function RegistrationForm() {
       participatedBefore : String(formData.get('participatedBefore') || ''),
       arrivingWithTeam : String(formData.get('arrivingWithTeam') || ''),
       teamDetails : String(formData.get('teamDetails') || ''),
-      challenge : String(formData.get('challenge') || ''),
-      background : String(formData.get('background') || ''),
-      motivation : String(formData.get('motivation') || ''),
+      challenge : '',
+      background : '',
+      motivation : '',
       notes : String(formData.get('notes') || ''),
     };
 
@@ -107,106 +107,76 @@ export function RegistrationForm() {
     >
       <div style={{ display : 'grid', gap : '20px' }}>
         <div>
-          <label style={{ display : 'block', marginBottom : '8px', fontWeight : 'bold', color : ISEF_BLUE }}>
-            שם מלא
-          </label>
-          <input
-            name="fullName"
-            type="text"
-            required
-            style={inputStyle}
-          />
+          <label style={labelStyle}>שם מלא *</label>
+          <input name='fullName' type='text' required style={inputStyle} />
         </div>
 
         <div style={twoColsStyle}>
           <div>
-            <label style={labelStyle}>אימייל</label>
-            <input name="email" type="email" required style={inputStyle} />
+            <label style={labelStyle}>אימייל *</label>
+            <input name='email' type='email' required style={inputStyle} />
           </div>
 
           <div>
-            <label style={labelStyle}>טלפון</label>
-            <input name="phone" type="tel" required style={inputStyle} />
+            <label style={labelStyle}>טלפון *</label>
+            <input name='phone' type='tel' required style={inputStyle} />
           </div>
         </div>
 
         <div style={twoColsStyle}>
           <div>
-            <label style={labelStyle}>אני...</label>
-            <select name="status" required style={inputStyle}>
-              <option value="">בחר/י</option>
-              <option value="בוגר/ת אייסף">בוגר/ת אייסף</option>
-              <option value="סטודנט/ית אייסף">סטודנט/ית אייסף</option>
-              <option value="אחר">אחר</option>
+            <label style={labelStyle}>אני... *</label>
+            <select name='status' required style={inputStyle}>
+              <option value=''>בחר/י</option>
+              <option value='בוגר/ת אייסף'>בוגר/ת אייסף</option>
+              <option value='סטודנט/ית אייסף'>סטודנט/ית אייסף</option>
+              <option value='אחר'>אחר</option>
             </select>
           </div>
 
           <div>
             <label style={labelStyle}>מוסד לימודים / מקום עבודה</label>
-            <input name="institution" type="text" style={inputStyle} />
+            <input name='institution' type='text' style={inputStyle} />
           </div>
         </div>
 
         <div>
           <label style={labelStyle}>LinkedIn</label>
-          <input name="linkedin" type="url" style={inputStyle} />
+          <input name='linkedin' type='url' style={inputStyle} />
         </div>
 
         <div style={twoColsStyle}>
           <div>
             <label style={labelStyle}>השתתפת בעבר בהאקתון?</label>
-            <select name="participatedBefore" style={inputStyle}>
-              <option value="">בחר/י</option>
-              <option value="כן">כן</option>
-              <option value="לא">לא</option>
+            <select name='participatedBefore' style={inputStyle}>
+              <option value=''>בחר/י</option>
+              <option value='כן'>כן</option>
+              <option value='לא'>לא</option>
             </select>
           </div>
 
           <div>
             <label style={labelStyle}>מגיע/ה עם צוות?</label>
-            <select name="arrivingWithTeam" style={inputStyle}>
-              <option value="">בחר/י</option>
-              <option value="כן">כן</option>
-              <option value="לא">לא</option>
+            <select name='arrivingWithTeam' style={inputStyle}>
+              <option value=''>בחר/י</option>
+              <option value='כן'>כן</option>
+              <option value='לא'>לא</option>
             </select>
           </div>
         </div>
 
         <div>
           <label style={labelStyle}>אם כן, פרטי צוות / שמות חברים</label>
-          <textarea name="teamDetails" rows={3} style={textareaStyle} />
-        </div>
-
-        <div>
-          <label style={labelStyle}>באיזה אתגר תרצה/י להתמקד?</label>
-          <select name="challenge" style={inputStyle}>
-            <option value="">בחר/י</option>
-            <option value="רפואה ובריאות דיגיטלית">רפואה ובריאות דיגיטלית</option>
-            <option value="בריאות, רווחה ואיכות חיים">בריאות, רווחה ואיכות חיים</option>
-            <option value="חינוך וכלים לדור הבא">חינוך וכלים לדור הבא</option>
-            <option value="שירותים ציבוריים חכמים (GovTech)">שירותים ציבוריים חכמים (GovTech)</option>
-            <option value="חוסן קהילתי ושייכות">חוסן קהילתי ושייכות</option>
-            <option value="קיימות ותשתיות חיים">קיימות ותשתיות חיים</option>
-          </select>
-        </div>
-
-        <div>
-          <label style={labelStyle}>רקע מקצועי / אקדמי</label>
-          <textarea name="background" rows={4} style={textareaStyle} />
-        </div>
-
-        <div>
-          <label style={labelStyle}>למה מעניין אותך להשתתף?</label>
-          <textarea name="motivation" rows={4} style={textareaStyle} />
+          <textarea name='teamDetails' rows={3} style={textareaStyle} />
         </div>
 
         <div>
           <label style={labelStyle}>הערות נוספות</label>
-          <textarea name="notes" rows={3} style={textareaStyle} />
+          <textarea name='notes' rows={3} style={textareaStyle} />
         </div>
 
         <button
-          type="submit"
+          type='submit'
           disabled={isSubmitting}
           style={{
             border : 'none',
