@@ -372,14 +372,13 @@ export default function App() {
             boxShadow : `8px 8px 0 ${ISEF_ORANGE}`
           }}
         >
-          <div className="flex flex-col md:flex-row-reverse">
-
-            <div className="w-full md:w-[280px] h-[260px] md:h-auto">
-              <img src={p.img} className="w-full h-full object-cover object-top" />
+          <div className='flex min-h-[280px] flex-col md:h-[280px] md:flex-row-reverse'>
+          
+            <div className='h-[260px] w-full shrink-0 md:h-full md:w-[280px]'>
+              <img src={p.img} className='h-full w-full object-cover object-top' />
             </div>
-
-            <div className="flex-1 p-8 text-right flex flex-col justify-center">
-
+          
+            <div className='flex flex-1 flex-col justify-center p-8 text-right'>
               <div
                 className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
                 style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
