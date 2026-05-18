@@ -82,7 +82,7 @@ const timeline = [
   {
     date : '28.5 | 16:00-20:00',
     title : 'מפגש הזנק',
-    desc : 'מפגש מקדים בתל אביב של היכרות, חלוקה לקבוצות ותחילת חשיבה על כיוונים ורעיונות.'
+    desc : 'מפגש מקדים באולם אפטר בבניין נפתלי, הפקולטה למדעי החברה באוניברסיטת תל אביב, הכולל היכרות, חלוקה לקבוצות, הרצאת אורח ותחילת חשיבה על כיוונים ורעיונות.'
   },
   {
     date : '24.6 | 20:30',
@@ -251,7 +251,7 @@ export default function App() {
               </h1>
 
               <p className="mx-auto mb-4 max-w-3xl text-2xl font-semibold leading-relaxed text-blue-50 sm:text-3xl md:text-4xl">
-                מפגש מקדים של היכרות, חלוקה לקבוצות ותחילת חשיבה על עולם היזמות.
+                מפגש מקדים של היכרות, חלוקה לקבוצות, הרצאת אורח ותחילת חשיבה על עולם היזמות.
               </p>
 
               <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
@@ -268,7 +268,7 @@ export default function App() {
                     <span>היכרות, חלוקה לקבוצות ותחילת חשיבה יזמית</span>
                   </div>
 
-                  <div className="mt-2 text-base font-bold text-blue-50 md:text-lg">תל אביב</div>
+                  <div className="mt-2 text-base font-bold text-blue-50 md:text-lg">אולם אפטר, בניין נפתלי, הפקולטה למדעי החברה, אוניברסיטת תל אביב</div>
 
                   <div className="mt-4 border-t border-white/15 pt-4 text-center">
                     <div className="text-base font-bold text-blue-100 md:text-lg">מה צריך להביא?</div>
@@ -307,6 +307,13 @@ export default function App() {
 
     {[
       {
+      label : 'הרצאת אורח',
+      name : 'אייל אלחייאני',
+      img : '/images/eyal.jpg',
+      desc : 'בוגר אייסף, יזם ובעלים של טריא. מביא ניסיון יזמי מעשי בהקמה, צמיחה והובלת מיזם משמעותי.',
+      sub : 'ישתף את המשתתפים במסע היזמי שלו ובתובנות מעשיות על הפיכת רעיון למיזם פעיל.'
+    },
+      {
         label : 'מובילת האירוע',
         name : 'ענת רודוניה שאשא',
         img : '/images/anat.jpg',
@@ -334,6 +341,13 @@ export default function App() {
         desc : 'מובילת טרנספורמציה דיגיטלית ושותפויות טכנולוגיות. מניעה תהליכי חדשנות מורכבים בסביבות ענן, תוך חיבור בין טכנולוגיה, אנשים וצרכים עסקיים.',
         sub : 'מביאה ניסיון בהובלת פתרונות שמייצרים ערך אמיתי ומשנים תהליכים בארגונים.'
       },
+      {
+      label : 'מנטורית',
+      name : 'ד"ר אורלי סלמה-אלבר',
+      img : '/images/orly.jpg',
+      desc : 'עורכת פטנטים, מייסדת ושותפה ב-A2i, בעלת ניסיון בינלאומי בקניין רוחני, חדשנות טכנולוגית ופיתוח מדיניות.',
+      sub : 'עם רקע מדעי עמוק בביוכימיה ובביולוגיה וניסיון בעבודה מול רשויות, ממשלות ותעשייה, אורלי מביאה שילוב ייחודי של הבנה טכנולוגית, חשיבה יישומית והתאמה לדרישות רגולטוריות.'
+    },
       {
         label : 'מנטור',
         name : 'עדן חסון',
@@ -506,7 +520,7 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
             <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים להגיע למפגש ההזנק?</h2>
-            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו למפגש המקדים בתל אביב שבו מתחילים להכיר, להתחבר ולחשוב יזמות יחד.</p>
+            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו למפגש המקדים באולם אפטר, בניין נפתלי, הפקולטה למדעי החברה באוניברסיטת תל אביב, שבו מתחילים להכיר, להתחבר ולחשוב יזמות יחד.</p>
           </div>
 
           <div className="mx-auto mb-6 max-w-4xl rounded-[28px] border bg-white p-5 text-center md:p-6" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
