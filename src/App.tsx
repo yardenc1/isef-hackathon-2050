@@ -323,6 +323,7 @@ export default function App() {
 
         <div className='absolute inset-x-0 top-6 z-20 px-4 md:px-8'>
           <div className='mx-auto flex max-w-6xl items-center justify-between gap-4'>
+            <img src='/logos/logo_combined.png' alt='ISEF 2050' className='h-10 w-auto object-contain md:h-14' />
             <img src='/logos/isef-white.png' alt='ISEF Logo' className='h-10 w-auto object-contain md:h-14' />
             <img src='/logos/mada-boneh-hevra-white.png' alt='מדע בונה חברה' className='h-10 w-auto object-contain opacity-90 md:h-14' />
           </div>
@@ -645,6 +646,7 @@ export default function App() {
 
           <div className='mt-10 flex flex-col items-center justify-center gap-6 border-t border-white/10 pt-8'>
             <div className='flex flex-wrap items-center justify-center gap-8 opacity-75'>
+              <img src='/logos/logo_combined.png' alt='ISEF 2050' className='h-10 w-auto object-contain md:h-14' />
               <img src='/logos/isef-white.png' alt='ISEF' className='h-12 w-auto object-contain md:h-20' />
               <img src='/logos/mada-boneh-hevra-white.png' alt='מדע בונה חברה' className='h-12 w-auto object-contain md:h-20' />
             </div>
