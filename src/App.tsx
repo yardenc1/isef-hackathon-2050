@@ -100,7 +100,7 @@ const timeline = [
   {
     date : '3.9 | 09:00-21:00',
     title : 'אירוע ההאקתון המרכזי',
-    desc : 'יום האקתון מלא בתל אביב עם צוותים, מנטורים, סדנאות, בנייה והצגת פתרונות.',
+    desc : 'יום האקתון מלא בספריית מדעי החברה באוניברסיטת תל אביב עם צוותים, מנטורים, סדנאות, בנייה והצגת פתרונות.',
   },
 ];
 
@@ -292,7 +292,7 @@ export default function App() {
             </div>
 
             <div className='text-base font-black tracking-wide text-white md:text-lg'>הספירה לאירוע ההאקתון המרכזי</div>
-            <div className='text-sm font-bold md:text-base' style={{ color : ISEF_ORANGE }}>3.9 | 09:00-21:00 | תל אביב</div>
+            <div className='text-sm font-bold md:text-base' style={{ color : ISEF_ORANGE }}>3.9 | 09:00-21:00 | ספריית מדעי החברה באוניברסיטת תל אביב</div>
           </div>
 
           <div className='flex flex-nowrap justify-center gap-1 overflow-x-auto pb-1 md:gap-3'>
