@@ -8,8 +8,16 @@ import {
   Leaf,
   Zap,
   ChevronDown,
+  Users,
   HelpCircle,
-  Clock3,
+  Trophy,
+  CalendarDays,
+  Wrench,
+  MapPin,
+  UserPlus,
+  Presentation,
+  Mic,
+  Sparkles,
 } from 'lucide-react';
 import { RegistrationForm } from './components/RegistrationForm';
 
@@ -72,17 +80,17 @@ const timeline = [
   {
     date : '29.3',
     title : 'פתיחת הרשמה',
-    desc : 'פתיחת ההרשמה למפגש ההזנק ולקראת תהליך ההאקתון לקהילת אייסף.'
+    desc : 'פתיחת ההרשמה להאקתון לקהילת אייסף.'
   },
   {
-    date : '18.5',
-    title : 'סגירת הרשמה למפגש ההזנק',
-    desc : 'המועד האחרון להצטרפות למפגש המקדים.'
+    date : '10.5',
+    title : 'סגירת הרשמה',
+    desc : 'המועד האחרון להגשת מועמדות.'
   },
   {
-    date : '28.5 | 16:00-20:00',
-    title : 'מפגש הזנק',
-    desc : 'מפגש מקדים באולם אפטר בבניין נפתלי, הפקולטה למדעי החברה באוניברסיטת תל אביב, הכולל היכרות, חלוקה לקבוצות, הרצאת אורח ותחילת חשיבה על כיוונים ורעיונות.'
+    date : '28.5 | 16:00',
+    title : 'אירוע מקדים',
+    desc : 'מפגש פתיחה, היכרות, השראה והתחלת תהליך החשיבה.'
   },
   {
     date : '24.6 | 20:30',
@@ -95,20 +103,32 @@ const timeline = [
     desc : 'כלים מתקדמים לבניית מיזם והכנה להאקתון.'
   },
   {
-    date : '3.9 | 09:00-21:00',
-    title : 'אירוע ההאקתון המרכזי',
-    desc : 'יום האקתון מלא בתל אביב עם צוותים, מנטורים, בנייה והצגת פתרונות.'
+    date : '10.9',
+    title : 'האירוע המרכזי',
+    desc : 'יום האקתון מלא - צוותים, מנטורים, בנייה והצגת פתרונות.'
   },
 ];
 
+const dayFlow = [
+  { title : 'פתיחה והיכרות', desc : 'התכנסות, פתיחה חגיגית, היכרות עם הקהל והאווירה של היום.', icon : CalendarDays },
+  { title : 'חלוקה לצוותים', desc : 'הצטוותו עם משתתפים נוספים או הקימו צוות חדש סביב רעיון משותף.', icon : UserPlus },
+  { title : 'עבודה בצוותים', desc : 'צוותים בונים פתרונות לאתגרים שהוגדרו, עם זמן לחשיבה, בנייה ודיוק הרעיון.', icon : Users },
+  { title : 'סדנאות פרקטיות', desc : 'סדנאות יישומיות שיעזרו לכם לדייק את הרעיון, לבנות מיזם ולהציג אותו בצורה משכנעת.', icon : Presentation },
+  { title : 'ליווי של מנטורים', desc : 'מנטורים יעזרו לחדד את הערך, הכיוון, המוצר והפיץ׳.', icon : Wrench },
+  { title : 'הצגה ופרסים', desc : 'בסוף היום הצוותים יציגו את הפתרון שלהם, והצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.', icon : Trophy },
+];
+
+const infoCards = [
+  { title : 'מה זה האקתון ISEF 2050?', desc : 'האקתון יומי לקהילת אייסף שמחבר בין אנשים, רעיונות ואתגרים משמעותיים. המטרה היא לבנות פתרונות אמיתיים סביב האתגרים שנציג, בליווי מנטורים ובאווירה של עשייה.' },
+  { title : 'מי יכולות ויכולים להשתתף?', desc : 'אפשר להגיע כיחידים או כצוות מגובש. תינתן אפשרות בתחילת ההאתקון להצטוות לצוות קיים או להקים צוות חדש. גם צוות קיים יכול להשתתף, כל עוד לפחות אחת או אחד מחברי הצוות שייכים לקהילת אייסף.' },
+  { title : 'מה מחכה לכם ביום עצמו?', desc : 'יום שלם של השראה, עבודה בצוותים, סדנאות פרקטיות, ליווי של מנטורים, הרצאת אורח והצגת הפתרונות על הבמה.' },
+];
+
 const faqs = [
-  { question : 'מה יקרה במפגש ההזנק?', answer : 'מפגש ההזנק הוא המפגש המקדים לתהליך. נכיר את המשתתפים, נציג את האתגרים, נחלק לקבוצות ונפתח את החשיבה היזמית לקראת ההמשך.' },
-  { question : 'האם זה עולה כסף?', answer : 'לא. ההשתתפות במפגש ההזנק ובהאקתון אינה כרוכה בתשלום.' },
-  { question : 'האם אפשר להגיע עם חבר/ה שהם לא באייסף?', answer : 'כן. אפשר להגיע עם חבר/ה או צוות קיים, כל עוד לפחות אחת או אחד מחברי הצוות שייכים לקהילת אייסף.' },
   { question : 'אפשר להגיע עם צוות קיים?', answer : 'כן. אפשר להגיע עם צוות מגובש, ובטופס כדאי לציין את שמות חברי הצוות ואת הפרטים הרלוונטיים עליהם.' },
-  { question : 'מי יכול להשתתף?', answer : 'אפשר להשתתף גם כיחידים וגם כצוות. תינתן אפשרות בתחילת ההאקתון להצטוות לצוות קיים או להקים צוות חדש. בצוות קיים מספיק שלפחות אחת או אחד מחברי הצוות יהיו מקהילת אייסף.' },
-  { question : 'צריך רעיון מוכן מראש?', answer : 'לא. אפשר להגיע גם בלי רעיון מלא. במהלך התהליך יהיו אתגרים מוגדרים, מנטורים וליווי שיסייעו לחדד כיוון ולבנות פתרון.' },
-  { question : 'יש פרס?', answer : 'כן. באירוע המרכזי הצוות הזוכה יתחרה על פרס ראשון כספי על סך 20,000 ש"ח.' },
+  { question : 'מי יכול להשתתף?', answer : 'אפשר להשתתף גם כיחידים וגם כצוות. תינתן אפשרות בתחילת ההאתקון להצטוות לצוות קיים או להקים צוות חדש. בצוות קיים מספיק שלפחות אחת או אחד מחברי הצוות יהיו מקהילת אייסף.' },
+  { question : 'צריך רעיון מוכן מראש?', answer : 'לא. אפשר להגיע גם בלי רעיון מלא. במהלך האירוע יהיו אתגרים מוגדרים, מנטורים וליווי שיסייעו לחדד כיוון ולבנות פתרון.' },
+  { question : 'יש פרס?', answer : 'כן. הצוות הזוכה יתחרה על פרס ראשון כספי משמעותי.' },
 ];
 
 function useCountdown(targetDate : Date) {
@@ -162,7 +182,7 @@ function ImageCarousel({ images, interval = 4500, className = '' } : { images : 
 }
 
 export default function App() {
-  const countdownTarget = useMemo(() => new Date('2026-05-18T23:59:59'), []);
+  const countdownTarget = useMemo(() => new Date('2026-05-10T23:59:59'), []);
   const timeLeft = useCountdown(countdownTarget);
   const [timelineProgress, setTimelineProgress] = useState(0);
   const [openChallengeId, setOpenChallengeId] = useState<number | null>(null);
@@ -197,11 +217,11 @@ export default function App() {
               className="mb-2 inline-flex items-center rounded-full px-4 py-1 text-base font-black md:text-lg"
               style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
             >
-              האב היזמות של אייסף יוצא לדרך!
+              תמיד חלמת להיות יזם?
             </div>
 
-            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה למפגש ההזנק נסגרת ב-18.5 בחצות</div>
-            <div className="text-sm font-bold md:text-base" style={{ color : ISEF_ORANGE }}>מפגש הזנק | 28.5</div>
+            <div className="text-base font-black tracking-wide text-white md:text-lg">ההרשמה ל-ISEF 2050 נסגרת ב-10.5 בחצות</div>
+            <div className="text-sm font-bold md:text-base" style={{ color : ISEF_ORANGE }}>פרס ראשון: עד 20,000 ש״ח</div>
           </div>
 
           <div className="flex flex-nowrap justify-center gap-1 overflow-x-auto pb-1 md:gap-3">
@@ -241,38 +261,36 @@ export default function App() {
           <div className="mx-auto max-w-5xl text-center">
             <motion.div initial={{ opacity : 0, y : 24 }} animate={{ opacity : 1, y : 0 }} transition={{ duration : 0.8 }}>
               <span className="mb-4 mt-10 inline-block rounded-full px-5 py-2 text-sm font-black uppercase tracking-[0.25em] md:mt-0 md:text-base" style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
-                ISEF 2050
+                ISEF 2050 HACKATHON
               </span>
 
               <h1 className="mb-5 text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-8xl">
-                מפגש ההזנק
+                הופכים רעיונות
                 <br />
-                של ISEF 2050
+                לפתרונות אמיתיים
               </h1>
 
               <p className="mx-auto mb-4 max-w-3xl text-2xl font-semibold leading-relaxed text-blue-50 sm:text-3xl md:text-4xl">
-                מפגש מקדים של היכרות, חלוקה לקבוצות, הרצאת אורח ותחילת חשיבה על עולם היזמות.
+                האקתון יומי לקהילת אייסף - מגיעים עם רצון לשנות ויוצאים עם רעיון מגובש.
               </p>
 
               <p className="mx-auto mb-8 max-w-2xl text-2xl font-bold text-zinc-200 md:text-3xl">
-                מגיעים רק עם רצון וחשיבה יזמית
+                צריך רק רצון לנסות
               </p>
 
               <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
                 <div className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white backdrop-blur-sm">
-                  <div className="text-lg font-bold text-blue-100 md:text-xl">מפגש הזנק</div>
-                  <div className="text-3xl font-black">28.5 | 16:00-20:00</div>
+                  <div className="text-lg font-bold text-blue-100 md:text-xl">אירוע ההאקתון המרכזי</div>
+                  <div className="text-3xl font-black">10.9 | 09:00-21:00</div>
 
                   <div className="mt-3 flex items-center justify-center gap-2 text-base font-semibold text-blue-50 md:text-lg">
-                    <Clock3 className="h-5 w-5" />
-                    <span>היכרות, חלוקה לקבוצות ותחילת חשיבה יזמית</span>
+                    <MapPin className="h-5 w-5" />
+                    <span>מרכז הארץ - מיקום מדויק יימסר בהמשך</span>
                   </div>
 
-                  <div className="mt-2 text-base font-bold text-blue-50 md:text-lg">אולם אפטר, בניין נפתלי, הפקולטה למדעי החברה, אוניברסיטת תל אביב</div>
-
                   <div className="mt-4 border-t border-white/15 pt-4 text-center">
-                    <div className="text-base font-bold text-blue-100 md:text-lg">מה צריך להביא?</div>
-                    <div className="mt-1 text-xl font-black md:text-2xl" style={{ color : ISEF_ORANGE }}>רק רצון וחשיבה על עולם היזמות</div>
+                    <div className="text-base font-bold text-blue-100 md:text-lg">פרס ראשון</div>
+                    <div className="mt-1 text-2xl font-black md:text-3xl" style={{ color : ISEF_ORANGE }}>עד 20,000 ש״ח</div>
                   </div>
                 </div>
 
@@ -296,78 +314,59 @@ export default function App() {
 <section className="bg-white py-16 md:py-20">
   <div className="container mx-auto px-4">
 
+    {/* HEADER */}
     <div className="mb-16 text-center">
       <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>
-        מי יפגוש אתכם במפגש ההזנק
+        מי מחכה לכם ביום ההאקתון
       </h2>
       <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
-        האנשים שילוו אתכם, יעזרו לכם להיפתח לעולם היזמות ויתנו השראה כבר מהמפגש המקדים.
+        יום מלא בהשראה, יזמות, חיבורים ולמידה מאנשים שילוו את המשתתפים לאורך הדרך.
       </p>
     </div>
 
+    {/* ===== CARD TEMPLATE ===== */}
     {[
       {
-      label : 'הרצאת אורח',
-      name : 'אייל אלחייאני',
-      img : '/images/eyal.jpg',
-      desc : 'בוגר אייסף, יזם ובעלים של טריא. מביא ניסיון יזמי מעשי בהקמה, צמיחה והובלת מיזם משמעותי.',
-      sub : 'ישתף את המשתתפים במסע היזמי שלו ובתובנות מעשיות על הפיכת רעיון למיזם פעיל.'
-    },
-      {
         label : 'מובילת האירוע',
-        name : 'ענת רודוניה שאשא',
-        img : '/images/anat.jpg',
-        desc : 'מנהלת קהילה ופיתוח עסקי בקרן אייסף. מובילה שיתופי פעולה ותהליכים מורכבים בקנה מידה רחב, עם ניסיון בבניית מערכות וחיבורים בין ארגונים ואנשים.',
-        sub : 'מביאה שילוב של חשיבה אסטרטגית ויכולת ביצוע שמתרגמת חזון ליוזמות עם אימפקט אמיתי.'
+        name : 'שיר אלקיים לוצאטו',
+        img : '/images/shir.jpeg',
+        desc : 'דוקטורנטית לכלכלה וניהול, חברת סגל MBA ומנכ״לית Impact360.',
+        sub : 'תוביל את היום כולו - מהפתיחה ועד ליווי המשתתפים.'
       },
       {
-        label : 'מוביל האירוע',
-        name : 'ירדן כהן',
-        img : '/images/yarden.jpg',
-        desc : 'DS באינטל וחוקר דאטה באוניברסיטת תל אביב. מפתח מודלים מתקדמים לקבלת החלטות בעולם האמיתי, תוך עבודה עם דאטה מורכב ולא מושלם.',
-        sub : 'משלב עומק מחקרי עם חשיבה פרקטית כדי להפוך נתונים לפתרונות שעובדים בשטח.'
-      },
-      {
-        label : 'מוביל + מנטור',
-        name : 'איתי דנה',
-        img : '/images/itay.jpg',
-        desc : 'יזם ואיש פיתוח עסקי ב-I DANA Consultation. מביא מעל 20 שנות ניסיון בהובלת אסטרטגיה, חדירה לשווקים גלובליים ובניית שותפויות מורכבות.',
-        sub : 'משלב חזון יזמי עם יכולת ביצוע שמוביל רעיונות להפוך למוצרים ולמהלכים עם השפעה אמיתית.'
+        label : 'הרצאת אורח',
+        name : 'פרופ׳ חיים סוכובסקי',
+        img : '/images/haim.jpeg',
+        desc : 'פיזיקאי וחוקר בתחום הננופוטוניקה והאופטיקה המתקדמת.',
+        sub : 'הרצאת אורח: Deep Tech - איך באמת משנים את העולם.'
       },
       {
         label : 'מנטורית',
         name : 'אינה ברנפלד גייזמן',
         img : '/images/inna.jpg',
-        desc : 'מובילת טרנספורמציה דיגיטלית ושותפויות טכנולוגיות. מניעה תהליכי חדשנות מורכבים בסביבות ענן, תוך חיבור בין טכנולוגיה, אנשים וצרכים עסקיים.',
-        sub : 'מביאה ניסיון בהובלת פתרונות שמייצרים ערך אמיתי ומשנים תהליכים בארגונים.'
+        desc : 'מובילה תהליכי טרנספורמציה דיגיטלית ושותפויות בענן.',
+        sub : 'תלווה צוותים בפיתוח רעיונות ובניית פתרונות עם השפעה אמיתית.'
       },
       {
-      label : 'מנטורית',
-      name : 'ד"ר אורלי סלמה-אלבר',
-      img : '/images/orly.jpeg',
-      desc : 'עורכת פטנטים, מייסדת ושותפה ב-A2i, בעלת ניסיון בינלאומי בקניין רוחני, חדשנות טכנולוגית ופיתוח מדיניות.',
-      sub : 'עם רקע מדעי עמוק בביוכימיה ובביולוגיה וניסיון בעבודה מול רשויות, ממשלות ותעשייה, אורלי מביאה שילוב ייחודי של הבנה טכנולוגית, חשיבה יישומית והתאמה לדרישות רגולטוריות.'
-    },
+        label : 'מנטור',
+        name : 'איתי דנה',
+        img : '/images/itay.jpg',
+        desc : 'יזם ואיש פיתוח עסקי עם ניסיון של מעל 20 שנה.',
+        sub : 'מתמחה בהובלת חדשנות והפיכת רעיונות למוצרים.'
+      },
       {
         label : 'מנטור',
         name : 'עדן חסון',
         img : '/images/eden.jpg',
-        desc : 'מהנדס תוכנה, עובד כמפתח סוכני AI בחברת הסטארט אפ הישראלית Wonderful. מגיע מרקע חזק בפיתוח מערכות, דאטה וניתוח מידע בסביבות מורכבות.',
-        sub : 'משלב יכולות פיתוח וחשיבה אנליטית כדי לבנות פתרונות חכמים ומבוססי נתונים.'
+        desc : 'מהנדס תוכנה עם רקע בדאטה ופיתוח מערכות. עובד כמפתח סוכני AI ב-Wonderful.',
+        sub : 'משלב חשיבה אנליטית עם פיתוח פתרונות טכנולוגיים.'
       },
       {
         label : 'מנטור',
         name : 'עידן שחמון',
         img : '/images/edan.jpg',
-        desc : 'חוקר דאטה באוניברסיטת תל אביב. מפתח מודלים מתקדמים ולמידת מכונה בסביבות מחקר ותעשייה.',
-        sub : 'מוביל תהליכים מקצה לקצה שמתרגמים בעיות מורכבות לפתרונות מדויקים מבוססי דאטה.'
-      },
-      {
-        label : 'מנטורית',
-        name : 'ד”ר אורנה יהודה-אברמסון',
-        img : '/images/orna.jpeg',
-        desc : 'מנהלת המחלקה המוניציפלית ב-KPMG.',
-        sub : 'משלבת ניתוחים אנליטיים והבנה התנהגותית להובלת אסטרטגיות מבוססות AI ונתונים המייצרות ערך עסקי וממשלתי.'
+        desc : 'חוקר דאטה סיינס המתמחה ב-Machine Learning.',
+        sub : 'מוביל פתרונות מקצה לקצה מבוססי דאטה.'
       }
     ].map((p, i) => (
 
@@ -379,13 +378,16 @@ export default function App() {
             boxShadow : `8px 8px 0 ${ISEF_ORANGE}`
           }}
         >
-          <div className='flex min-h-[280px] flex-col md:h-[280px] md:flex-row-reverse'>
-          
-            <div className='h-[260px] w-full shrink-0 md:h-full md:w-[280px]'>
-              <img src={p.img} className='h-full w-full object-cover object-top' />
+          <div className="flex flex-col md:flex-row-reverse">
+
+            {/* IMAGE */}
+            <div className="w-full md:w-[280px] h-[260px] md:h-auto">
+              <img src={p.img} className="w-full h-full object-cover object-top" />
             </div>
-          
-            <div className='flex flex-1 flex-col justify-center p-8 text-right'>
+
+            {/* TEXT */}
+            <div className="flex-1 p-8 text-right flex flex-col justify-center">
+
               <div
                 className="mb-3 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold"
                 style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}
@@ -422,7 +424,7 @@ export default function App() {
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-5xl font-black text-white md:text-6xl">הדרך להאקתון</h2>
+            <h2 className="text-5xl font-black text-white md:text-6xl">לו״ז הדרך להאקתון</h2>
           </div>
 
           <div ref={timelineRef} className="relative mx-auto max-w-5xl">
@@ -469,7 +471,7 @@ export default function App() {
           <div className="mb-10 text-center">
             <h2 className="mb-4 text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>אתגרי הליבה</h2>
             <p className="mx-auto max-w-3xl text-xl text-zinc-600 md:text-2xl">
-              אתגרי הליבה שילוו את תהליך החשיבה והפיתוח -
+              אתגרי הליבה שתוכלו לבחור ביום האירוע - 
             </p>
           </div>
 
@@ -522,11 +524,31 @@ export default function App() {
         </div>
       </section>
 
+      <section className="bg-white py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-3 text-center text-5xl font-black md:text-6xl" style={{ color : ISEF_BLUE }}>מה צפוי ביום ההאקתון</h2>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {dayFlow.map((item) => (
+              <div key={item.title} className="rounded-[28px] bg-zinc-50 p-6 md:p-7" style={{ border : `2px solid ${ISEF_BLUE}`, boxShadow : `6px 6px 0 ${ISEF_ORANGE}` }}>
+                <div className="mb-3 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ backgroundColor : ISEF_BLUE, color : 'white' }}>
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-2xl font-black" style={{ color : ISEF_BLUE }}>{item.title}</h3>
+                </div>
+                <p className="text-lg leading-relaxed text-zinc-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="register" className="py-16 md:py-20" style={{ backgroundColor : '#FFF8F0' }}>
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
-            <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים להגיע למפגש ההזנק?</h2>
-            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו למפגש המקדים באולם אפטר, בניין נפתלי, הפקולטה למדעי החברה באוניברסיטת תל אביב, שבו מתחילים להכיר, להתחבר ולחשוב יזמות יחד.</p>
+            <h2 className="mb-4 text-5xl font-black tracking-tight md:text-7xl" style={{ color : ISEF_BLUE }}>מוכנים לבנות את העתיד?</h2>
+            <p className="text-xl font-bold text-zinc-600 md:text-2xl">הצטרפו ליום שלם של חדשנות, יצירה, השראה והזדמנות לבנות מיזם עם אימפקט אמיתי.</p>
           </div>
 
           <div className="mx-auto mb-6 max-w-4xl rounded-[28px] border bg-white p-5 text-center md:p-6" style={{ borderColor : 'rgba(27,47,110,0.12)' }}>
