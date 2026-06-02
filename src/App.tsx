@@ -322,17 +322,25 @@ export default function App() {
         <div className='absolute inset-0 z-10 bg-gradient-to-b from-black/35 via-black/30 to-[#1B2F6E]/75' />
 
         <div className='absolute inset-x-0 top-6 z-20 px-4 md:px-8'>
-          <div className='mx-auto flex max-w-6xl items-center justify-between gap-4'>
-            <img src='/logos/library.png' alt='ISEF 2050' className='h-10 w-auto object-contain md:h-14' />
-            <img src='/logos/isef-white.png' alt='ISEF Logo' className='h-10 w-auto object-contain md:h-14' />
-            <img src='/logos/mada-boneh-hevra-white.png' alt='מדע בונה חברה' className='h-10 w-auto object-contain opacity-90 md:h-14' />
+          <div className='mx-auto grid max-w-6xl grid-cols-3 items-center gap-4'>
+            <div className='flex justify-start'>
+              <img src='/logos/mada-boneh-hevra-white.png' alt='מדע בונה חברה' className='h-10 w-auto object-contain opacity-90 md:h-14' />
+            </div>
+        
+            <div className='flex justify-center'>
+              <img src='/logos/isef-white.png' alt='ISEF Logo' className='h-10 w-auto object-contain md:h-14' />
+            </div>
+        
+            <div className='flex justify-end'>
+              <img src='/logos/logo_white_no_background.png' alt='The Brender-Moss Library' className='h-12 w-auto object-contain md:h-16' />
+            </div>
           </div>
         </div>
 
         <div className='relative z-20 container mx-auto flex min-h-[92vh] items-center px-4 py-14'>
           <div className='mx-auto max-w-5xl text-center'>
             <motion.div initial={{ opacity : 0, y : 24 }} animate={{ opacity : 1, y : 0 }} transition={{ duration : 0.8 }}>
-              <span className='mb-4 mt-10 inline-block rounded-full px-5 py-2 text-sm font-black uppercase tracking-[0.25em] md:mt-0 md:text-base' style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
+              <span className='mb-4 mt-28 inline-block rounded-full px-5 py-2 text-sm font-black uppercase tracking-[0.25em] md:mt-20 md:text-base' style={{ backgroundColor : ISEF_ORANGE, color : ISEF_BLUE }}>
                 ISEF 2050 HACKATHON
               </span>
 
