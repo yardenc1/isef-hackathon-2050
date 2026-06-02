@@ -332,7 +332,7 @@ export default function App() {
             </div>
         
             <div className='flex justify-end'>
-              <img src='/logos/logo_white_no_background.png' alt='The Brender-Moss Library' className='h-12 w-auto object-contain md:h-16' />
+              <img src='/logos/library.png' alt='The Brender-Moss Library' className='h-12 w-auto object-contain md:h-16' />
             </div>
           </div>
         </div>
