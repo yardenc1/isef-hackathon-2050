@@ -253,7 +253,7 @@ function ImageCarousel({ images, interval = 4500, className = '' } : { images : 
 }
 
 export default function App() {
-  const countdownTarget = useMemo(() => new Date('2026-09-03T09:00:00+03:00'), []);
+  const countdownTarget = useMemo(() => new Date('2026-08-19T09:00:00+03:00'), []);
   const timeLeft = useCountdown(countdownTarget);
   const [timelineProgress, setTimelineProgress] = useState(0);
   const [openChallengeId, setOpenChallengeId] = useState<number | null>(null);
