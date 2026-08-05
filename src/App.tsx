@@ -291,8 +291,8 @@ export default function App() {
               האב היזמות של אייסף ממשיך לאירוע המרכזי
             </div>
 
-            <div className='text-base font-black tracking-wide text-white md:text-lg'>הספירה לאירוע ההאקתון המרכזי</div>
-            <div className='text-sm font-bold md:text-base' style={{ color : ISEF_ORANGE }}>3.9 | 09:00-21:00 | ספריית מדעי החברה באוניברסיטת תל אביב</div>
+            <div className='text-base font-black tracking-wide text-white md:text-lg'>הספירה לסגירת ההרשמה ב-19.8 בחצות</div>
+            <div className='text-sm font-bold md:text-base' style={{ color : ISEF_ORANGE }}>אירוע ההאקתון המרכזי יתקיים ב-3.9 | 09:00-21:00 | ספריית מדעי החברה באוניברסיטת תל אביב</div>
           </div>
 
           <div className='flex flex-nowrap justify-center gap-1 overflow-x-auto pb-1 md:gap-3'>
